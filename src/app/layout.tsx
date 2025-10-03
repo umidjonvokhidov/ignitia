@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} antialiased grid grid-cols-[40px_1fr_40px] md:grid-cols-[80px_1fr_80px] lg:grid-cols-[120px_1fr_120px] min-h-screen`}
+        className={`${inter.variable} ${instrumentSerif.variable} antialiased grid grid-cols-[40px_1fr_40px] md:grid-cols-[80px_1fr_80px] xl:grid-cols-[120px_1fr_120px] min-h-screen dark`}
       >
         <div className='h-full relative w-full bg-[url(/icons/Pattern.svg)] bg-[length:120px_120px] bg-repeat border-r border-white/8' />
         {children}
