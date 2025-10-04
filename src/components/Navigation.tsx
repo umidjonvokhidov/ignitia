@@ -66,13 +66,15 @@ export default function Navigation() {
   return (
     <nav className="flex items-center justify-between h-[92px] p-6 border-y border-white/[0.08] relative">
       <div className="flex items-center gap-x-4">
-        <Image
-          src="icons/Logo-full.svg"
-          alt="Logo"
-          width={0}
-          height={0}
-          className="w-[90px] h-[32px] object-contain md:w-[115px] md:h-[36px] lg:mr-[28px]"
-        />
+        <Link href="/">
+          <Image
+            src="icons/Logo-full.svg"
+            alt="Logo"
+            width={0}
+            height={0}
+            className="w-[90px] h-[32px] object-contain md:w-[115px] md:h-[36px] lg:mr-[28px]"
+          />
+        </Link>
         <div className="hidden lg:block w-[1px] h-[24px] bg-[#262626]" />
         <NavigationMenu viewport={true} className="hidden lg:block">
           <NavigationMenuList className="gap-x-0">
@@ -97,7 +99,7 @@ export default function Navigation() {
                   </NavigationMenuLink>
                 )}
                 {hasDropdown && (
-                  <NavigationMenuContent className='border-white/[0.08]'>
+                  <NavigationMenuContent className="border-white/[0.08]">
                     <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {href === '/products' &&
                         PRODUCTS_DROPDOWN.items.map(
