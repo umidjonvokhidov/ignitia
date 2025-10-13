@@ -1,6 +1,6 @@
-import TopBanner from "@/components/TopBanner";
-import Navigation from "@/components/Navigation";
-import Footer from "@/sections/Footer";
+import TopBanner from '@/components/TopBanner';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export default function PagesLayout({
   children,
@@ -8,7 +8,7 @@ export default function PagesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main>
+    <main className='relative'>
       <TopBanner />
       <Navigation />
       {children}

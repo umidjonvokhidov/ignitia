@@ -369,8 +369,9 @@
     @apply text-[24px] leading-[32px] tracking-[-0.02em] font-normal;
   }
 
+
   p {
-    @apply text-base leading-7 tracking-[-0.02em] font-normal;
+    @apply text-base leading-7 tracking-[-0.02em] font-normal text-neutral-500;
   }
 }
 
@@ -420,6 +421,11 @@
 
   .body-text-xsmall-regular {
     @apply text-xs leading-4 tracking-[-0.02em] font-normal;
+  }
+
+  .handwrite {
+    @apply text-[#B8DFF9] italic;
+    font-family: var(--font-instrument-serif);
   }
 }
 

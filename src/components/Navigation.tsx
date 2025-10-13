@@ -27,7 +27,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { cn } from '@/lib/utils';
+import CustomButton from './CustomButton';
 
 export default function Navigation() {
   const lottieRef = useRef<any>(null);
@@ -64,7 +64,7 @@ export default function Navigation() {
   }, [open]);
 
   return (
-    <nav className="flex items-center justify-between h-[92px] p-6 border-y border-white/[0.08] relative">
+    <nav className="flex items-center justify-between bg-[#0B0C0C] h-[92px] bg- sticky top-0 p-6 border-y border-white/[0.08]">
       <div className="flex items-center gap-x-4">
         <Link href="/">
           <Image
@@ -126,12 +126,8 @@ export default function Navigation() {
         </NavigationMenu>
       </div>
       <div className="hidden lg:flex items-center gap-x-2">
-        <Button className="bg-neutral-950 border body-text-medium-semi-bold border-neutral-800 h-9 text-white hover:bg-neutral-700 cursor-pointer">
-          Login
-        </Button>
-        <Button className="body-text-medium-semi-bold h-9 bg-primary-500 hover:bg-primary-700 text-white cursor-pointer">
-          Request a Demo
-        </Button>
+        <CustomButton type="secondary">Login</CustomButton>
+        <CustomButton>Request a Demo</CustomButton>
       </div>
       <Lottie
         lottieRef={lottieRef}
@@ -199,12 +195,8 @@ export default function Navigation() {
               )}
             </Accordion>
             <div className="flex items-center flex-col gap-y-2 w-3/5 mx-auto">
-              <Button className="bg-neutral-950 border body-text-medium-semi-bold border-neutral-800 h-9 text-white hover:bg-neutral-700 cursor-pointer w-full rounded-sm">
-                Login
-              </Button>
-              <Button className="body-text-medium-semi-bold h-9 bg-primary-500 hover:bg-primary-700 text-white cursor-pointer w-full rounded-sm">
-                Request a Demo
-              </Button>
+              <CustomButton type="secondary">Login</CustomButton>
+              <CustomButton>Request a Demo</CustomButton>
             </div>
           </AccordionContent>
         </AccordionItem>
