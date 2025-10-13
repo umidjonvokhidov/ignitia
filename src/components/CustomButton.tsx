@@ -24,7 +24,7 @@ const CustomButton = ({
     'bg-primary-500 hover:bg-primary-700 active:bg-primary-800 focus:bg-primary-500 focus:shadow-[inset_0_0_0_1px_rgba(62,111,243,1),_0_0_0_3px_rgba(62,111,243,0.1)] disabled:bg-primary-300 text-white cursor-pointer rounded-sm';
   const secondaryButtonClassName =
     'bg-neutral-950 border border-neutral-800 text-white hover:bg-neutral-700 active:bg-neutral-800 focus:shadow-[inset_0_0_0_1px_rgba(14,18,27,1),_0_0_0_3px_rgba(153,160,174,0.1)] disabled:bg-neutral-300 cursor-pointer rounded-sm focus:neutral-950';
-  const buttonClassName = 'body-text-medium-semi-bold h-9 w-full lg:w-auto flex items-center gap-x-1';
+  const buttonClassName = 'sm:body-text-small-semi-bold md:body-text-medium-semi-bold h-9 w-full flex-1 lg:flex-auto lg:w-auto flex items-center gap-x-1';
 
   return href ? (
     <Link
