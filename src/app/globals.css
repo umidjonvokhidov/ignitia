@@ -436,6 +436,10 @@
   @apply text-base leading-7 tracking-[-0.02em] font-medium;
 }
 
+@utility body-text-medium-regular {
+  @apply text-base leading-7 tracking-[-0.02em] font-normal;
+}
+
 @utility body-text-small-semi-bold {
   @apply text-sm leading-6 tracking-[-0.02em] font-semibold;
 }
