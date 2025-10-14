@@ -345,6 +345,20 @@
     font-family: var(--font-inter);
   }
 
+  .hero {
+    background-image: url('/images/HeroImgLeft.png'), url('/images/HeroImgRight.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: left center, right center;
+    background-size: 32% auto, 32% auto;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      background-size: 70% auto, 0 0;
+      background-position: left center, right center;
+    }
+  }
+
   h1 {
     @apply text-[72px] leading-[80px] tracking-[-0.04em] font-normal;
   }
@@ -378,55 +392,77 @@
 /* Replace custom @utility rules with semantic @layer blocks and classes */
 
 /* Typography utilities */
-@layer typography {
-  .body-text-large-semi-bold {
-    @apply text-lg leading-8 tracking-[-0.02em] font-semibold;
-  }
+@utility text-h1 {
+  @apply text-[72px] leading-[80px] tracking-[-0.04em] font-normal;
+}
 
-  .body-text-large-medium {
-    @apply text-lg leading-8 tracking-[-0.02em] font-medium;
-  }
+@utility text-h2 {
+  @apply text-[64px] leading-[72px] tracking-[-0.04em] font-normal;
+}
 
-  .body-text-large-regular {
-    @apply text-lg leading-8 tracking-[-0.02em] font-normal;
-  }
+@utility text-h3 {
+  @apply text-[48px] leading-[56px] tracking-[-0.03em] font-normal;
+}
 
-  .body-text-medium-semi-bold {
-    @apply text-base leading-7 tracking-[-0.02em] font-semibold;
-  }
+@utility text-h4 {
+  @apply text-[40px] leading-[48px] tracking-[-0.03em] font-normal;
+}
 
-  .body-text-medium-medium {
-    @apply text-base leading-7 tracking-[-0.02em] font-medium;
-  }
+@utility text-h5 {
+  @apply text-[32px] leading-[40px] tracking-[-0.03em] font-normal;
+}
 
-  .body-text-small-semi-bold {
-    @apply text-sm leading-6 tracking-[-0.02em] font-semibold;
-  }
+@utility text-h6 {
+  @apply text-[24px] leading-[32px] tracking-[-0.02em] font-normal;
+}
 
-  .body-text-small-medium {
-    @apply text-sm leading-6 tracking-[-0.02em] font-medium;
-  }
+@utility body-text-large-semi-bold {
+  @apply text-lg leading-8 tracking-[-0.02em] font-semibold;
+}
 
-  .body-text-small-regular {
-    @apply text-sm leading-6 tracking-[-0.02em] font-normal;
-  }
+@utility body-text-large-medium {
+  @apply text-lg leading-8 tracking-[-0.02em] font-medium;
+}
 
-  .body-text-xsmall-semi-bold {
-    @apply text-xs leading-4 tracking-[-0.02em] font-semibold;
-  }
+@utility body-text-large-regular {
+  @apply text-lg leading-8 tracking-[-0.02em] font-normal;
+}
 
-  .body-text-xsmall-medium {
-    @apply text-xs leading-4 tracking-[-0.02em] font-medium;
-  }
+@utility body-text-medium-semi-bold {
+  @apply text-base leading-7 tracking-[-0.02em] font-semibold;
+}
 
-  .body-text-xsmall-regular {
-    @apply text-xs leading-4 tracking-[-0.02em] font-normal;
-  }
+@utility body-text-medium-medium {
+  @apply text-base leading-7 tracking-[-0.02em] font-medium;
+}
 
-  .handwrite {
-    @apply text-[#B8DFF9] italic;
-    font-family: var(--font-instrument-serif);
-  }
+@utility body-text-small-semi-bold {
+  @apply text-sm leading-6 tracking-[-0.02em] font-semibold;
+}
+
+@utility body-text-small-medium {
+  @apply text-sm leading-6 tracking-[-0.02em] font-medium;
+}
+
+@utility body-text-small-regular {
+  @apply text-sm leading-6 tracking-[-0.02em] font-normal;
+}
+
+@utility body-text-xsmall-semi-bold {
+  @apply text-xs leading-4 tracking-[-0.02em] font-semibold;
+}
+
+@utility body-text-xsmall-medium {
+  @apply text-xs leading-4 tracking-[-0.02em] font-medium;
+}
+
+@utility body-text-xsmall-regular {
+  @apply text-xs leading-4 tracking-[-0.02em] font-normal;
+}
+
+@utility handwrite {
+  @apply text-[#B8DFF9] italic;
+  font-family: var(--font-instrument-serif);
 }
 
 /* Shadows */
