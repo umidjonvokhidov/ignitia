@@ -25,7 +25,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from '@/components/ui/NavMenuAccordion';
 import CustomButton from './CustomButton';
 
 export default function Navigation() {
