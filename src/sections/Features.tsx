@@ -24,6 +24,8 @@ import CustomButton from '@/components/CustomButton';
 import Facebook from '@/public/icons/Facebook.svg';
 import X from '@/public/icons/X.svg';
 import Google from '@/public/icons/Google.svg';
+import Info from '@/public/icons/info.svg';
+import Image from 'next/image';
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
@@ -67,7 +69,14 @@ export default function Features() {
           ))}
         </Accordion>
         <div className="p-4 md:p-10 w-full flex flex-col justify-center bg-white/4 relative group">
-          <div className="bg-[radial-gradient(68.33%_68.33%_at_50%_53.12%,_rgba(21,22,22,0)_0%,_#000000a0_100%)] w-full h-full absolute top-0 left-0 z-2" />
+          <Image
+            src="/images/SocialsBg.svg"
+            width={0}
+            height={0}
+            className="w-auto h-auto absolute z-3 opacity-50 left-1/2 -translate-x-1/2"
+            alt="bg"
+          />
+          <div className="bg-[radial-gradient(68.33%_68.33%_at_50%_53.12%,_#00000038_50%,_#151616_100%)] w-full h-full absolute top-0 left-0 z-2" />
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -77,19 +86,32 @@ export default function Features() {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Work email</FormLabel>
+                  <FormItem className="flex flex-col items-start gap-y-1 justify-center">
+                    <FormLabel className="body-text-small-medium flex items-center justify-between w-full">
+                      <div className="flex items-center">
+                        <div className="inline-block">
+                          Work email{' '}
+                          <span className="text-red-700 text-lg">*</span>{' '}
+                          <span className="text-neutral-600">(Optional)</span>
+                        </div>{' '}
+                        <Info className="text-[#CACFD8]" />
+                      </div>
+                      <p className="text-neutral-500">Help</p>
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="e.g: johndoe@gmail.com"
-                        className="h-12 rounded-lg"
+                        className="h-12 rounded-md"
                         {...field}
                       />
                     </FormControl>
-                    <FormDescription>
-                      This is a hint text to help user.
+                    <FormDescription className="flex items-center gap-x-1">
+                      <Info className="text-[#CACFD8]" />
+                      <span>This is a hint text to help user.</span>
                     </FormDescription>
-                    <p>We will send a text with a verification code.</p>
+                    <p className="text-center w-full my-3 md:text-left">
+                      We will send a text with a verification code.
+                    </p>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -99,15 +121,12 @@ export default function Features() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="flex items-center gap-x-3">
+                    <div className="flex items-center gap-x-3 justify-center md:justify-start">
                       <FormControl>
                         <Checkbox {...field} />
                       </FormControl>
                       <FormLabel>Remember me</FormLabel>
                     </div>
-                    <FormDescription>
-                      This is a hint text to help user.
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
