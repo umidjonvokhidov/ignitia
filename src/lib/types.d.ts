@@ -51,6 +51,12 @@ declare interface FeatureItem {
 declare interface IntegrationItem {
   name: string;
   icon: React.ComponentType<SVGProps<SVGSVGElement>>;
+  col?: number; 
+  row?: number; 
+  mdcol?: number,
+  mdrow?: number,
+  lgcol?: number,
+  lgrow?: number,
 }
 
 declare interface Testimonial {
