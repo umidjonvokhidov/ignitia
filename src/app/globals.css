@@ -37,7 +37,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  
+
   /* Expose color scales to Tailwind for autocomplete */
   /* Neutral */
   --color-neutral-0: var(--neutral-0);
@@ -346,16 +346,39 @@
   }
 
   .hero {
-    background-image: url('/images/HeroImgLeft.png'), url('/images/HeroImgRight.png');
+    background-image:
+      url('/images/HeroImgLeft.png'), url('/images/HeroImgRight.png');
     background-repeat: no-repeat, no-repeat;
-    background-position: left center, right center;
-    background-size: 32% auto, 32% auto;
+    background-position:
+      left center,
+      right center;
+    background-size:
+      32% auto,
+      32% auto;
+  }
+
+  @media (min-width: 768px) {
+    [data-mdcol][data-mdrow] {
+      grid-column-start: attr(data-mdcol number);
+      grid-row-start: attr(data-mdrow number);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    [data-lgcol][data-lgrow] {
+      grid-column-start: attr(data-lgcol number);
+      grid-row-start: attr(data-lgrow number);
+    }
   }
 
   @media (max-width: 640px) {
     .hero {
-      background-size: 70% auto, 0 0;
-      background-position: left center, right center;
+      background-size:
+        70% auto,
+        0 0;
+      background-position:
+        left center,
+        right center;
     }
   }
 
@@ -382,7 +405,6 @@
   h6 {
     @apply text-[24px] leading-[32px] tracking-[-0.02em] font-normal;
   }
-
 
   p {
     @apply text-base leading-7 tracking-[-0.02em] font-normal text-neutral-500;

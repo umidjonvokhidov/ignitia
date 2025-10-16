@@ -21,9 +21,6 @@ import {
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import CustomButton from '@/components/CustomButton';
-import Facebook from '@/public/icons/Facebook.svg';
-import X from '@/public/icons/X.svg';
-import Google from '@/public/icons/Google.svg';
 import Info from '@/public/icons/info.svg';
 import Image from 'next/image';
 
