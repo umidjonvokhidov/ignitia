@@ -1,8 +1,14 @@
+'use client';
+
 import CustomButton from '@/components/CustomButton';
 import { INTEGRATION_ICONS } from '@/lib/constants';
-import { twMerge } from 'tailwind-merge';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Integrations() {
+  const mdScreen = useMediaQuery({ query: '(min-width: 768px)' });
+  const lgScreen = useMediaQuery({ query: '(min-width: 1024px)' });
+  const count = lgScreen ? 13 : mdScreen ? 11 : 11;
+
   return (
     <section>
       <div className="flex flex-col items-center px-4 py-6 gap-y-4 md:py-8 lg:py-10 max-w-[700px] mx-auto">
@@ -18,7 +24,7 @@ export default function Integrations() {
       </div>
       <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-[1px] p-[1px] bg-white/4 relative overflow-hidden">
         <div className="w-full h-full left-1/2 -translate-x-1/2 -bottom-3/4 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]" />
-        <div className="md:col-start-2 md:col-span-3 md:row-start-3 md:row-span-2 lg:col-start-4 lg:col-span-4 lg:row-start-2 lg:row-span-1 w-full flex items-center justify-center bg-[#0B0C0C]">
+        <div className="col-start-1 row-start-5 col-span-3 row-span-1 md:col-start-2 md:col-span-3 md:row-start-3 md:row-span-2 lg:col-start-4 lg:col-span-4 lg:row-start-2 lg:row-span-1 w-full flex items-center justify-center bg-[#0B0C0C] h-[150px] md:h-full">
           <CustomButton className="w-auto flex-none">
             View All Integrations
           </CustomButton>
@@ -36,18 +42,23 @@ export default function Integrations() {
           }: IntegrationItem) => (
             <div
               key={name}
-              className="aspect-square flex justify-center items-center transition-all hover:bg-white/4 bg-[#0B0C0C] duration-1000 delay-300 overflow-hidden"
-              data-mdcol={mdcol}
-              data-mdrow={mdrow}
-              data-lgcol={lgcol}
-              data-lgrow={lgrow}
-              style={{ gridColumnStart: col, gridRowStart: row }}
+              className="aspect-square flex justify-center items-center transition-all bg-[#0B0C0C] duration-500 overflow-hidden grid-item"
+              style={
+                {
+                  ['--col' as any]: col,
+                  ['--row' as any]: row,
+                  ['--mdcol' as any]: mdcol,
+                  ['--mdrow' as any]: mdrow,
+                  ['--lgcol' as any]: lgcol,
+                  ['--lgrow' as any]: lgrow,
+                } as React.CSSProperties
+              }
             >
-              <Icon className="scale-50 md:scale-75 lg:scale-100" />
+              <Icon className="" />
             </div>
           ),
         )}
-        {Array.from({ length: 13 }).map((_, i) => (
+        {Array.from({ length: count }).map((_, i) => (
           <div
             key={`ph-${i}`}
             className="aspect-square flex justify-center items-center bg-[#0B0C0C]"

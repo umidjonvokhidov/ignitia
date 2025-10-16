@@ -357,17 +357,22 @@
       32% auto;
   }
 
+  .grid-item {
+    grid-column-start: var(--col);
+    grid-row-start: var(--row);
+  }
+
   @media (min-width: 768px) {
-    [data-mdcol][data-mdrow] {
-      grid-column-start: attr(data-mdcol number);
-      grid-row-start: attr(data-mdrow number);
+    .grid-item {
+      grid-column-start: var(--mdcol);
+      grid-row-start: var(--mdrow);
     }
   }
 
   @media (min-width: 1024px) {
-    [data-lgcol][data-lgrow] {
-      grid-column-start: attr(data-lgcol number);
-      grid-row-start: attr(data-lgrow number);
+    .grid-item {
+      grid-column-start: var(--lgcol);
+      grid-row-start: var(--lgrow);
     }
   }
 
