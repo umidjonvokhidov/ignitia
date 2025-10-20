@@ -26,7 +26,7 @@ export default function Integrations() {
           easier.
         </p>
       </div>
-      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-[1px] p-[1px] bg-white/4 relative overflow-hidden">
+      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-[1px] p-[1px] bg-white/4 relative ">
         <div className="w-full h-full left-1/2 -translate-x-1/2 -bottom-3/4 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]" />
         <div className="w-full h-full left-1/2 -translate-x-1/2 -top-3/4 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]" />
         <div className="col-start-1 row-start-5 col-span-3 row-span-1 md:col-start-2 md:col-span-3 md:row-start-3 md:row-span-2 lg:col-start-4 lg:col-span-4 lg:row-start-2 lg:row-span-1 w-full flex items-center justify-center bg-[#0B0C0C] h-[150px] md:h-full">

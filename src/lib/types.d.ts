@@ -1,13 +1,13 @@
 // SVG Type Declarations for SVGR
 declare module '*.svg' {
-  import { FC, SVGProps } from 'react'
-  const content: FC<SVGProps<SVGElement>>
-  export default content
+  import { FC, SVGProps } from 'react';
+  const content: FC<SVGProps<SVGElement>>;
+  export default content;
 }
 
 declare module '*.svg?url' {
-  const content: any
-  export default content
+  const content: any;
+  export default content;
 }
 
 declare interface NavLink {
@@ -51,12 +51,12 @@ declare interface FeatureItem {
 declare interface IntegrationItem {
   name: string;
   icon: React.ComponentType<SVGProps<SVGSVGElement>>;
-  col?: number; 
-  row?: number; 
-  mdcol?: number,
-  mdrow?: number,
-  lgcol?: number,
-  lgrow?: number,
+  col?: number;
+  row?: number;
+  mdcol?: number;
+  mdrow?: number;
+  lgcol?: number;
+  lgrow?: number;
 }
 
 declare interface Testimonial {
@@ -87,7 +87,7 @@ declare interface FAQCategory {
 declare interface PricingPlan {
   name: string;
   description: string;
-  price: string;
+  price: Number;
   features: string[];
   isPopular?: boolean;
   href: string;
@@ -108,7 +108,6 @@ declare interface FooterLegalLink {
   name: string;
   href: string;
 }
-
 
 declare interface FooterSocialLink {
   name: string;
