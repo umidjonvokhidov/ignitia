@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from '@/components/ui/FeaturesSectionAccordion';
 import { FEATURES_ACCORDION } from '@/lib/constants';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
