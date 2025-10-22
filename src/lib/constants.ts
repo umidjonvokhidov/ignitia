@@ -753,7 +753,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar.png',
     name: 'Sarah Mansy',
-    title: 'CEO & Co-Founder',
+    title: 'Chief Executive Officer (CEO)',
     socialMedia: {
       facebook: 'https://facebook.com/sarahmansy',
       x: 'https://x.com/sarahmansy',
@@ -763,7 +763,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar-1.png',
     name: 'James Loki',
-    title: 'CTO & Co-Founder',
+    title: 'Chief Technology Officer (CTO)',
     socialMedia: {
       instagram: 'https://instagram.com/jamesloki',
       facebook: 'https://facebook.com/jamesloki',
@@ -774,7 +774,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar-2.png',
     name: 'Jenny Wilson',
-    title: 'Head of Product',
+    title: 'Chief Operating Officer (COO)',
     socialMedia: {
       facebook: 'https://facebook.com/jennywilson',
       x: 'https://x.com/jennywilson',
@@ -784,7 +784,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar-3.png',
     name: 'Robert Fox',
-    title: 'Lead Designer',
+    title: 'Head of Product Development',
     socialMedia: {
       instagram: 'https://instagram.com/robertfox',
       facebook: 'https://facebook.com/robertfox',
@@ -795,7 +795,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar-4.png',
     name: 'Esther Howard',
-    title: 'Marketing Manager',
+    title: 'Director of Customer Success',
     socialMedia: {
       facebook: 'https://facebook.com/estherhoward',
       x: 'https://x.com/estherhoward',
@@ -805,7 +805,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar-5.png',
     name: 'Brooklyn Simmons',
-    title: 'Sales Manager',
+    title: 'Senior Security Architect',
     socialMedia: {
       instagram: 'https://instagram.com/brooklynsimmons',
       facebook: 'https://facebook.com/brooklynsimmons',
@@ -816,7 +816,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar-6.png',
     name: 'Guy Hawkins',
-    title: 'Software Engineer',
+    title: 'Marketing Manager',
     socialMedia: {
       instagram: 'https://instagram.com/guyhawkins',
       facebook: 'https://facebook.com/guyhawkins',
@@ -827,7 +827,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     avatar: '/images/TeamAvatar-7.png',
     name: 'Leslie Alexander',
-    title: 'QA Engineer',
+    title: 'Software Engineer',
     socialMedia: {
       facebook: 'https://facebook.com/lesliealexander',
       x: 'https://x.com/lesliealexander',
