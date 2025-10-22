@@ -121,16 +121,18 @@ declare interface AboutFeature {
   description: string;
 }
 
+declare interface SocialMedia {
+  facebook?: string;
+  x?: string;
+  linkedin?: string;
+  instagram?: string;
+}
+
 declare interface TeamMember {
   avatar: string;
   name: string;
   title: string;
-  socialMedia: {
-    facebook?: string;
-    x?: string;
-    linkedin?: string;
-    instagram?: string;
-  };
+  socialMedia: SocialMedia;
 }
 
 declare interface PricingAddon {
