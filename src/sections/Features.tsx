@@ -77,7 +77,7 @@ export default function Features() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8 flex flex-col justify-center h-[360px] group-hover:z-5 transition-all duration-500"
+              className="space-y-8 flex flex-col justify-center h-[360px] z-5 md:z-0 group-hover:z-5 transition-all duration-500"
             >
               <FormField
                 control={form.control}

@@ -20,7 +20,7 @@ const Footer = () => {
             productivity.
           </p>
         </div>
-        <div className="flex items-center gap-x-3 w-full md:w-auto">
+        <div className="flex items-center gap-3 w-full md:w-auto flex-wrap">
           <CustomButton type="secondary">Learn More</CustomButton>
           <CustomButton>Get Started</CustomButton>
         </div>
