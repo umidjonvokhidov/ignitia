@@ -36,10 +36,11 @@ const PricingCard = ({ pricingCard }: { pricingCard: PricingPlan }) => {
             )}
           </div>
           <div className="flex items-center gap-x-2">
-            <Label htmlFor={name} className="text-sm text-neutral-500">
+            <Label htmlFor={name} className="text-sm text-neutral-500 cursor-pointer">
               Billed yearly
             </Label>
             <Switch
+              className="cursor-pointer"
               id={name}
               checked={isAnnualPlan}
               onCheckedChange={() => setIsAnnualPlan(!isAnnualPlan)}

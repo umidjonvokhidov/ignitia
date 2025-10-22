@@ -51,12 +51,12 @@ export default function FAQ() {
               <AccordionItem
                 value={title}
                 key={index}
-                className="p-4 md:px-10 md:py-6"
+                className="!p-0"
               >
-                <AccordionTrigger className="!body-text-large-semi-bold cursor-pointer">
+                <AccordionTrigger className="!body-text-large-semi-bold cursor-pointer p-4 md:px-10 md:py-6">
                   {title}
                 </AccordionTrigger>
-                <AccordionContent className="!body-text-medium-regular text-neutral-500 p-0">
+                <AccordionContent className="!body-text-medium-regular text-neutral-500 p-4 md:px-10 md:py-6 !pt-0">
                   {description}
                 </AccordionContent>
               </AccordionItem>
