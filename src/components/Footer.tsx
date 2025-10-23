@@ -82,7 +82,7 @@ const Footer = () => {
       <div className="flex flex-col justify-between items-center md:flex-row border-y border-white/8 p-6 md:p-8 lg:p-10 gap-y-6">
         <Link href="/">
           <Image
-            src="icons/Logo-full.svg"
+            src="/icons/Logo-full.svg"
             alt="Logo"
             width={0}
             height={0}

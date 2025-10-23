@@ -190,6 +190,16 @@ declare interface PricingPlanFeatures {
   features: PricingFeature[];
 }
 
+declare interface BlogToC {
+  id: string;
+  title: string;
+}
+
+declare interface SocialM {
+  title: 'X' | 'LinkedIn' | 'Facebook' | 'instagram' | 'Link';
+  link: string;
+}
+
 declare interface BlogPost {
   id: string;
   title: string;
@@ -198,16 +208,14 @@ declare interface BlogPost {
     name: string;
     handle: string;
     avatar: string;
+    socialMedia: SocialM[];
   };
   date: string;
   image: string;
   excerpt: string;
   content: string;
   rawHtml: string;
-  tableOfContents?: {
-    title: string;
-    paragraphs: string[];
-  }[];
+  tableOfContents?: BlogToC[];
   tags: string[];
   readTime: string;
   featured?: boolean;

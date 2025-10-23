@@ -1066,6 +1066,16 @@ export const PRICING_PLAN_FEATURES: PricingPlanFeatures = {
   ],
 };
 
+// Helper function to generate URL-friendly IDs from titles
+const generateId = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim();
+};
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'caching-keys-iam-security',
@@ -1075,6 +1085,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'James Loki',
       handle: '@jamesloki',
       avatar: '/images/TeamAvatar-1.png',
+      socialMedia: [
+        { title: 'X', link: 'https://twitter.com/jamesloki' },
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/jamesloki' },
+        { title: 'Link', link: 'https://github.com/jamesloki' },
+      ],
     },
     date: 'December 24, 2024',
     image: '/images/BlogImg.jpg',
@@ -1083,102 +1098,76 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'Caching seems like an attractive performance optimization in IAM for faster authentication and reduced database load. However, caching authentication and authorization keys can transform a security architecture from a fortress into a house of cards...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">Caching seems like an attractive performance optimization in IAM for faster authentication and reduced database load. However, caching authentication and authorization keys can transform a security architecture from a fortress into a house of cards.</p>
+      <div>
+        <p>Caching seems like an attractive performance optimization in IAM for faster authentication and reduced database load. However, caching authentication and authorization keys can transform a security architecture from a fortress into a house of cards.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Stale permissions persist</h2>
-        <p class="text-gray-700 mb-4">Cached authentication keys can lead to unauthorized access if an employee's roles change or they are terminated, as access might persist until the cache expires, even after revocation.</p>
+        <h2 id="stale-permissions-persist">Stale permissions persist</h2>
+        <p>Cached authentication keys can lead to unauthorized access if an employee's roles change or they are terminated, as access might persist until the cache expires, even after revocation.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Instant compromise surface</h2>
-        <p class="text-gray-700 mb-4">If an attacker gains access to a cached key store, they immediately get a comprehensive map of potential access points, dramatically expanding the attack surface.</p>
+        <h2 id="instant-compromise-surface">Instant compromise surface</h2>
+        <p>If an attacker gains access to a cached key store, they immediately get a comprehensive map of potential access points, dramatically expanding the attack surface.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Technical Vulnerabilities in Key Caching</h2>
-        <h3 class="text-xl font-semibold mt-6 mb-3">Token Replay and Replay Attacks</h3>
-        <p class="text-gray-700 mb-4">Intercepted or stolen cached keys can be reused multiple times before cache invalidation, granting extended unauthorized access.</p>
+        <h2 id="technical-vulnerabilities-in-key-caching">Technical Vulnerabilities in Key Caching</h2>
+        <p><b>Token Replay and Replay Attacks</b> Intercepted or stolen cached keys can be reused multiple times before cache invalidation, granting extended unauthorized access.</p>
         
-        <h3 class="text-xl font-semibold mt-6 mb-3">Race Conditions in Distributed Systems</h3>
-        <p class="text-gray-700 mb-4">In distributed environments, cached keys can cause complex race conditions where permission updates don't immediately propagate across all cached instances, leading to inconsistent and unpredictable access control.</p>
+        <p><b>Race Conditions in Distributed Systems</b> In distributed environments, cached keys can cause complex race conditions where permission updates don't immediately propagate across all cached instances, leading to inconsistent and unpredictable access control.</p>
         
-        <h3 class="text-xl font-semibold mt-6 mb-3">Insufficient Hashing Methods leading to Credential Bypass</h3>
-        <p class="text-gray-700 mb-4">Choosing the right parameters for computing hash keys is crucial. Using methods like CRC32, which has a small target space, can lead to key collisions and credential bypass scenarios.</p>
+        <p><b>Insufficient Hashing Methods leading to Credential Bypass</b> Choosing the right parameters for computing hash keys is crucial. Using methods like CRC32, which has a small target space, can lead to key collisions and credential bypass scenarios.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Best practices for secure authentication</h2>
-        <p class="text-gray-700 mb-4">Instead of caching keys, implement these security-first strategies:</p>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2"><strong>Short-lived Tokens:</strong> Use time-bound access tokens with minimal lifespans.</li>
-          <li class="text-gray-700 mb-2"><strong>Real-time Verification:</strong> Validate permissions at each critical access point.</li>
-          <li class="text-gray-700 mb-2"><strong>Centralized Authorization:</strong> Maintain a single source of truth for access rights.</li>
-          <li class="text-gray-700 mb-2"><strong>Dynamic Permission Checks:</strong> Evaluate permissions in real-time during each request.</li>
+        <h2 id="best-practices-for-secure-authentication">Best practices for secure authentication</h2>
+        <p>Instead of caching keys, implement these security-first strategies:</p>
+        <ul>
+          <li><b>Short-lived Tokens:</b> Use time-bound access tokens with minimal lifespans.</li>
+          <li><b>Real-time Verification:</b> Validate permissions at each critical access point.</li>
+          <li><b>Centralized Authorization:</b> Maintain a single source of truth for access rights.</li>
+          <li><b>Dynamic Permission Checks:</b> Evaluate permissions in real-time during each request.</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Performance considerations</h2>
-        <p class="text-gray-700 mb-4">The post addresses the concern about performance, stating that modern IAM systems and cloud infrastructure have evolved. The performance hit of real-time verification is minimal compared to the "catastrophic potential of a security breach." Prioritizing security-first strategies builds a robust and future-proof access control system.</p>
+        <h2 id="performance-considerations">Performance considerations</h2>
+        <p>The post addresses the concern about performance, stating that modern IAM systems and cloud infrastructure have evolved. The performance hit of real-time verification is minimal compared to the "catastrophic potential of a security breach." Prioritizing security-first strategies builds a robust and future-proof access control system.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Practical implementation strategies</h2>
-        <p class="text-gray-700 mb-4">Strategies proven to work for security and efficiency:</p>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2">Use token-based authentication with short expiration times.</li>
-          <li class="text-gray-700 mb-2">Implement refresh mechanisms that require re-authentication.</li>
-          <li class="text-gray-700 mb-2">Store minimal, encrypted metadata instead of full permission sets.</li>
-          <li class="text-gray-700 mb-2">Leverage distributed caching with immediate invalidation capabilities.</li>
+        <h2 id="practical-implementation-strategies">Practical implementation strategies</h2>
+        <p>Strategies proven to work for security and efficiency:</p>
+        <ul>
+          <li>Use token-based authentication with short expiration times.</li>
+          <li>Implement refresh mechanisms that require re-authentication.</li>
+          <li>Store minimal, encrypted metadata instead of full permission sets.</li>
+          <li>Leverage distributed caching with immediate invalidation capabilities.</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Conclusion</h2>
-        <p class="text-gray-700 mb-4">Caching authentication keys is described as a "shortcut that leads to a potential security nightmare." In the current era of cyber threats, IAM systems should prioritize real-time, dynamic access control over "marginal performance gains."</p>
-        <p class="text-gray-700 mb-4">The final advice is: "When it comes to security, convenience can be the enemy of protection. Strike this balance wisely."</p>
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Caching authentication keys is described as a "shortcut that leads to a potential security nightmare." In the current era of cyber threats, IAM systems should prioritize real-time, dynamic access control over "marginal performance gains."</p>
+        <p>The final advice is: "When it comes to security, convenience can be the enemy of protection. Strike this balance wisely."</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'stale-permissions-persist',
         title: 'Stale permissions persist',
-        paragraphs: [
-          "Cached authentication keys can lead to unauthorized access if an employee's roles change or they are terminated, as access might persist until the cache expires, even after revocation.",
-        ],
       },
       {
+        id: 'instant-compromise-surface',
         title: 'Instant compromise surface',
-        paragraphs: [
-          'If an attacker gains access to a cached key store, they immediately get a comprehensive map of potential access points, dramatically expanding the attack surface.',
-        ],
       },
       {
+        id: 'technical-vulnerabilities-in-key-caching',
         title: 'Technical vulnerabilities in key caching',
-        paragraphs: [
-          'Token Replay and Replay Attacks: Intercepted or stolen cached keys can be reused multiple times before cache invalidation, granting extended unauthorized access.',
-          "Race Conditions in Distributed Systems: In distributed environments, cached keys can cause complex race conditions where permission updates don't immediately propagate across all cached instances, leading to inconsistent and unpredictable access control.",
-          'Insufficient Hashing Methods leading to Credential Bypass: Choosing the right parameters for computing hash keys is crucial. Using methods like CRC32, which has a small target space, can lead to key collisions and credential bypass scenarios.',
-        ],
       },
       {
+        id: 'best-practices-for-secure-authentication',
         title: 'Best practices for secure authentication',
-        paragraphs: [
-          'Short-lived Tokens: Use time-bound access tokens with minimal lifespans.',
-          'Real-time Verification: Validate permissions at each critical access point.',
-          'Centralized Authorization: Maintain a single source of truth for access rights.',
-          'Dynamic Permission Checks: Evaluate permissions in real-time during each request.',
-        ],
       },
       {
+        id: 'performance-considerations',
         title: 'Performance considerations',
-        paragraphs: [
-          "The post addresses the concern about performance, stating that modern IAM systems and cloud infrastructure have evolved. The performance hit of real-time verification is minimal compared to the 'catastrophic potential of a security breach.' Prioritizing security-first strategies builds a robust and future-proof access control system.",
-        ],
       },
       {
+        id: 'practical-implementation-strategies',
         title: 'Practical implementation strategies',
-        paragraphs: [
-          'Use token-based authentication with short expiration times.',
-          'Implement refresh mechanisms that require re-authentication.',
-          'Store minimal, encrypted metadata instead of full permission sets.',
-          'Leverage distributed caching with immediate invalidation capabilities.',
-        ],
       },
       {
+        id: 'conclusion',
         title: 'Conclusion',
-        paragraphs: [
-          "Caching authentication keys is described as a 'shortcut that leads to a potential security nightmare.' In the current era of cyber threats, IAM systems should prioritize real-time, dynamic access control over 'marginal performance gains.'",
-          "The final advice is: 'When it comes to security, convenience can be the enemy of protection. Strike this balance wisely.'",
-        ],
       },
     ],
     tags: ['IAM', 'Security', 'Authentication', 'Caching', 'Best Practices'],
@@ -1193,6 +1182,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Jenny Wilson',
       handle: '@jennywilson',
       avatar: '/images/TeamAvatar-2.png',
+      socialMedia: [
+        { title: 'X', link: 'https://twitter.com/jennywilson' },
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/jennywilson' },
+        { title: 'Link', link: 'https://medium.com/@jennywilson' },
+      ],
     },
     date: 'December 20, 2024',
     image: '/images/BlogImg-1.jpg',
@@ -1201,54 +1195,43 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'Passkeys represent a paradigm shift in digital authentication, moving away from the traditional password-based system that has plagued users and security teams for decades...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">Passkeys represent a paradigm shift in digital authentication, moving away from the traditional password-based system that has plagued users and security teams for decades.</p>
+      <div>
+        <p>Passkeys represent a paradigm shift in digital authentication, moving away from the traditional password-based system that has plagued users and security teams for decades.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">What are Passkeys?</h2>
-        <p class="text-gray-700 mb-4">Passkeys are a new authentication method that uses public-key cryptography to provide secure, passwordless authentication. They eliminate the need for users to remember complex passwords while providing stronger security than traditional authentication methods.</p>
+        <h2 id="what-are-passkeys">What are Passkeys?</h2>
+        <p>Passkeys are a new authentication method that uses public-key cryptography to provide secure, passwordless authentication. They eliminate the need for users to remember complex passwords while providing stronger security than traditional authentication methods.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">How Passkeys Work</h2>
-        <p class="text-gray-700 mb-4">When you create a passkey, your device generates a unique cryptographic key pair. The private key stays securely on your device, while the public key is shared with the service you're authenticating to. This creates a secure, phishing-resistant authentication method.</p>
+        <h2 id="how-passkeys-work">How Passkeys Work</h2>
+        <p>When you create a passkey, your device generates a unique cryptographic key pair. The private key stays securely on your device, while the public key is shared with the service you're authenticating to. This creates a secure, phishing-resistant authentication method.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Benefits of Passkeys</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2"><strong>Enhanced Security:</strong> Resistant to phishing, credential stuffing, and other common attacks</li>
-          <li class="text-gray-700 mb-2"><strong>Better User Experience:</strong> No need to remember or type passwords</li>
-          <li class="text-gray-700 mb-2"><strong>Cross-Platform:</strong> Works across devices and platforms</li>
-          <li class="text-gray-700 mb-2"><strong>Biometric Integration:</strong> Uses fingerprint, face recognition, or device PIN</li>
+        <h2 id="benefits-of-passkeys">Benefits of Passkeys</h2>
+        <ul>
+          <li><b>Enhanced Security:</b> Resistant to phishing, credential stuffing, and other common attacks</li>
+          <li><b>Better User Experience:</b> No need to remember or type passwords</li>
+          <li><b>Cross-Platform:</b> Works across devices and platforms</li>
+          <li><b>Biometric Integration:</b> Uses fingerprint, face recognition, or device PIN</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Implementation Considerations</h2>
-        <p class="text-gray-700 mb-4">Implementing passkeys requires careful planning around user onboarding, device management, and fallback authentication methods. Organizations should consider gradual rollout strategies and comprehensive user education programs.</p>
+        <h2 id="implementation-considerations">Implementation Considerations</h2>
+        <p>Implementing passkeys requires careful planning around user onboarding, device management, and fallback authentication methods. Organizations should consider gradual rollout strategies and comprehensive user education programs.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'what-are-passkeys',
         title: 'What are Passkeys?',
-        paragraphs: [
-          'Passkeys are a new authentication method that uses public-key cryptography to provide secure, passwordless authentication. They eliminate the need for users to remember complex passwords while providing stronger security than traditional authentication methods.',
-        ],
       },
       {
+        id: 'how-passkeys-work',
         title: 'How Passkeys Work',
-        paragraphs: [
-          "When you create a passkey, your device generates a unique cryptographic key pair. The private key stays securely on your device, while the public key is shared with the service you're authenticating to. This creates a secure, phishing-resistant authentication method.",
-        ],
       },
       {
+        id: 'benefits-of-passkeys',
         title: 'Benefits of Passkeys',
-        paragraphs: [
-          'Enhanced Security: Resistant to phishing, credential stuffing, and other common attacks',
-          'Better User Experience: No need to remember or type passwords',
-          'Cross-Platform: Works across devices and platforms',
-          'Biometric Integration: Uses fingerprint, face recognition, or device PIN',
-        ],
       },
       {
+        id: 'implementation-considerations',
         title: 'Implementation Considerations',
-        paragraphs: [
-          'Implementing passkeys requires careful planning around user onboarding, device management, and fallback authentication methods. Organizations should consider gradual rollout strategies and comprehensive user education programs.',
-        ],
       },
     ],
     tags: ['Passkeys', 'Biometric', 'Authentication', 'Security', 'UX'],
@@ -1262,6 +1245,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Robert Fox',
       handle: '@robertfox',
       avatar: '/images/TeamAvatar-3.png',
+      socialMedia: [
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/robertfox' },
+        { title: 'X', link: 'https://twitter.com/robertfox' },
+        { title: 'Link', link: 'https://dev.to/robertfox' },
+      ],
     },
     date: 'December 19, 2024',
     image: '/images/BlogImg-2.jpg',
@@ -1270,45 +1258,36 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'Creating an engineering career ladder is one of the most impactful things you can do for your development team. It provides clarity, motivation, and a clear path for growth...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">Creating an engineering career ladder is one of the most impactful things you can do for your development team. It provides clarity, motivation, and a clear path for growth that benefits both individual contributors and the organization as a whole.</p>
+      <div>
+        <p>Creating an engineering career ladder is one of the most impactful things you can do for your development team. It provides clarity, motivation, and a clear path for growth that benefits both individual contributors and the organization as a whole.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Why Career Ladders Matter</h2>
-        <p class="text-gray-700 mb-4">A well-defined career ladder helps engineers understand their current position, what's expected of them, and how they can advance. This clarity reduces uncertainty and provides motivation for professional development.</p>
+        <h2 id="why-career-ladders-matter">Why Career Ladders Matter</h2>
+        <p>A well-defined career ladder helps engineers understand their current position, what's expected of them, and how they can advance. This clarity reduces uncertainty and provides motivation for professional development.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Key Components of a Career Ladder</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2"><strong>Level Definitions:</strong> Clear descriptions of each level and expectations</li>
-          <li class="text-gray-700 mb-2"><strong>Skills Matrix:</strong> Technical and soft skills required at each level</li>
-          <li class="text-gray-700 mb-2"><strong>Promotion Criteria:</strong> Objective measures for advancement</li>
-          <li class="text-gray-700 mb-2"><strong>Compensation Ranges:</strong> Salary bands aligned with levels</li>
+        <h2 id="key-components-of-a-career-ladder">Key Components of a Career Ladder</h2>
+        <ul>
+          <li><b>Level Definitions:</b> Clear descriptions of each level and expectations</li>
+          <li><b>Skills Matrix:</b> Technical and soft skills required at each level</li>
+          <li><b>Promotion Criteria:</b> Objective measures for advancement</li>
+          <li><b>Compensation Ranges:</b> Salary bands aligned with levels</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Implementation Best Practices</h2>
-        <p class="text-gray-700 mb-4">Start with your current team structure and work backwards. Gather input from engineers at all levels, benchmark against industry standards, and ensure the ladder supports both individual contributor and management tracks.</p>
+        <h2 id="implementation-best-practices">Implementation Best Practices</h2>
+        <p>Start with your current team structure and work backwards. Gather input from engineers at all levels, benchmark against industry standards, and ensure the ladder supports both individual contributor and management tracks.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'why-career-ladders-matter',
         title: 'Why Career Ladders Matter',
-        paragraphs: [
-          "A well-defined career ladder helps engineers understand their current position, what's expected of them, and how they can advance. This clarity reduces uncertainty and provides motivation for professional development.",
-        ],
       },
       {
+        id: 'key-components-of-a-career-ladder',
         title: 'Key Components of a Career Ladder',
-        paragraphs: [
-          'Level Definitions: Clear descriptions of each level and expectations',
-          'Skills Matrix: Technical and soft skills required at each level',
-          'Promotion Criteria: Objective measures for advancement',
-          'Compensation Ranges: Salary bands aligned with levels',
-        ],
       },
       {
+        id: 'implementation-best-practices',
         title: 'Implementation Best Practices',
-        paragraphs: [
-          'Start with your current team structure and work backwards. Gather input from engineers at all levels, benchmark against industry standards, and ensure the ladder supports both individual contributor and management tracks.',
-        ],
       },
     ],
     tags: [
@@ -1328,6 +1307,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Alex Kim',
       handle: '@alexkim',
       avatar: '/images/TeamAvatar-4.png',
+      socialMedia: [
+        { title: 'Link', link: 'https://github.com/alexkim' },
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/alexkim' },
+        { title: 'X', link: 'https://twitter.com/alexkim' },
+      ],
     },
     date: 'December 20, 2024',
     image: '/images/BlogImg-3.jpg',
@@ -1336,46 +1320,38 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'API rate limiting is a critical component of modern web security and performance management. When implemented correctly, it protects your services from abuse while ensuring legitimate users have optimal access...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">API rate limiting is a critical component of modern web security and performance management. When implemented correctly, it protects your services from abuse while ensuring legitimate users have optimal access.</p>
+      <div>
+        <p>API rate limiting is a critical component of modern web security and performance management. When implemented correctly, it protects your services from abuse while ensuring legitimate users have optimal access.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Token Bucket Algorithm</h2>
-        <p class="text-gray-700 mb-4">The token bucket algorithm provides a flexible approach to rate limiting by allowing bursts of traffic while maintaining an overall rate limit. Tokens are added to a bucket at a fixed rate, and requests consume tokens from the bucket.</p>
+        <h2 id="token-bucket-algorithm">Token Bucket Algorithm</h2>
+        <p>The token bucket algorithm provides a flexible approach to rate limiting by allowing bursts of traffic while maintaining an overall rate limit. Tokens are added to a bucket at a fixed rate, and requests consume tokens from the bucket.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Sliding Window Log</h2>
-        <p class="text-gray-700 mb-4">This approach maintains a log of request timestamps within a sliding time window, providing accurate rate limiting that prevents clients from exceeding limits by spreading requests evenly.</p>
+        <h2 id="sliding-window-log">Sliding Window Log</h2>
+        <p>This approach maintains a log of request timestamps within a sliding time window, providing accurate rate limiting that prevents clients from exceeding limits by spreading requests evenly.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Distributed Rate Limiting</h2>
-        <p class="text-gray-700 mb-4">For microservices architectures, distributed rate limiting using Redis or similar technologies ensures consistent enforcement across multiple service instances.</p>
+        <h2 id="distributed-rate-limiting">Distributed Rate Limiting</h2>
+        <p>For microservices architectures, distributed rate limiting using Redis or similar technologies ensures consistent enforcement across multiple service instances.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Adaptive Rate Limiting</h2>
-        <p class="text-gray-700 mb-4">Advanced implementations can dynamically adjust rate limits based on client behavior, server load, and other contextual factors to provide optimal user experience while maintaining security.</p>
+        <h2 id="adaptive-rate-limiting">Adaptive Rate Limiting</h2>
+        <p>Advanced implementations can dynamically adjust rate limits based on client behavior, server load, and other contextual factors to provide optimal user experience while maintaining security.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'token-bucket-algorithm',
         title: 'Token Bucket Algorithm',
-        paragraphs: [
-          'The token bucket algorithm provides a flexible approach to rate limiting by allowing bursts of traffic while maintaining an overall rate limit. Tokens are added to a bucket at a fixed rate, and requests consume tokens from the bucket.',
-        ],
       },
       {
+        id: 'sliding-window-log',
         title: 'Sliding Window Log',
-        paragraphs: [
-          'This approach maintains a log of request timestamps within a sliding time window, providing accurate rate limiting that prevents clients from exceeding limits by spreading requests evenly.',
-        ],
       },
       {
+        id: 'distributed-rate-limiting',
         title: 'Distributed Rate Limiting',
-        paragraphs: [
-          'For microservices architectures, distributed rate limiting using Redis or similar technologies ensures consistent enforcement across multiple service instances.',
-        ],
       },
       {
+        id: 'adaptive-rate-limiting',
         title: 'Adaptive Rate Limiting',
-        paragraphs: [
-          'Advanced implementations can dynamically adjust rate limits based on client behavior, server load, and other contextual factors to provide optimal user experience while maintaining security.',
-        ],
       },
     ],
     tags: ['API', 'Rate Limiting', 'Security', 'Performance', 'Best Practices'],
@@ -1389,6 +1365,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Emma Thompson',
       handle: '@emmathompson',
       avatar: '/images/TeamAvatar-5.png',
+      socialMedia: [
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/emmathompson' },
+        { title: 'X', link: 'https://twitter.com/emmathompson' },
+        { title: 'Link', link: 'https://medium.com/@emmathompson' },
+      ],
     },
     date: 'December 18, 2024',
     image: '/images/BlogImg-4.jpg',
@@ -1397,43 +1378,35 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'Zero Trust Architecture represents a fundamental shift in how we approach security, moving from perimeter-based defenses to a model where trust is never assumed and always verified...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">Zero Trust Architecture represents a fundamental shift in how we approach security, moving from perimeter-based defenses to a model where trust is never assumed and always verified.</p>
+      <div>
+        <p>Zero Trust Architecture represents a fundamental shift in how we approach security, moving from perimeter-based defenses to a model where trust is never assumed and always verified.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Core Principles of Zero Trust</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2"><strong>Verify Explicitly:</strong> Authenticate and authorize based on all available data points</li>
-          <li class="text-gray-700 mb-2"><strong>Use Least Privilege Access:</strong> Limit user access with just-in-time and just-enough-access principles</li>
-          <li class="text-gray-700 mb-2"><strong>Assume Breach:</strong> Design systems with the assumption that attackers are already inside</li>
+        <h2 id="core-principles-of-zero-trust">Core Principles of Zero Trust</h2>
+        <ul>
+          <li><b>Verify Explicitly:</b> Authenticate and authorize based on all available data points</li>
+          <li><b>Use Least Privilege Access:</b> Limit user access with just-in-time and just-enough-access principles</li>
+          <li><b>Assume Breach:</b> Design systems with the assumption that attackers are already inside</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">IAM Components for Zero Trust</h2>
-        <p class="text-gray-700 mb-4">Modern IAM systems must support continuous authentication, risk-based access decisions, and micro-segmentation to effectively implement Zero Trust principles.</p>
+        <h2 id="iam-components-for-zero-trust">IAM Components for Zero Trust</h2>
+        <p>Modern IAM systems must support continuous authentication, risk-based access decisions, and micro-segmentation to effectively implement Zero Trust principles.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Implementation Roadmap</h2>
-        <p class="text-gray-700 mb-4">Start with identity governance, implement strong authentication, then progressively add context-aware access controls and continuous monitoring capabilities.</p>
+        <h2 id="implementation-roadmap">Implementation Roadmap</h2>
+        <p>Start with identity governance, implement strong authentication, then progressively add context-aware access controls and continuous monitoring capabilities.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'core-principles-of-zero-trust',
         title: 'Core Principles of Zero Trust',
-        paragraphs: [
-          'Verify Explicitly: Authenticate and authorize based on all available data points',
-          'Use Least Privilege Access: Limit user access with just-in-time and just-enough-access principles',
-          'Assume Breach: Design systems with the assumption that attackers are already inside',
-        ],
       },
       {
+        id: 'iam-components-for-zero-trust',
         title: 'IAM Components for Zero Trust',
-        paragraphs: [
-          'Modern IAM systems must support continuous authentication, risk-based access decisions, and micro-segmentation to effectively implement Zero Trust principles.',
-        ],
       },
       {
+        id: 'implementation-roadmap',
         title: 'Implementation Roadmap',
-        paragraphs: [
-          'Start with identity governance, implement strong authentication, then progressively add context-aware access controls and continuous monitoring capabilities.',
-        ],
       },
     ],
     tags: ['Zero Trust', 'IAM', 'Security', 'Architecture', 'Compliance'],
@@ -1447,6 +1420,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'David Park',
       handle: '@davidpark',
       avatar: '/images/TeamAvatar-6.png',
+      socialMedia: [
+        { title: 'X', link: 'https://twitter.com/davidpark' },
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/davidpark' },
+        { title: 'Link', link: 'https://dev.to/davidpark' },
+      ],
     },
     date: 'December 17, 2024',
     image: '/images/BlogImg-5.jpg',
@@ -1455,43 +1433,35 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'Multi-Factor Authentication (MFA) has become a cornerstone of modern cybersecurity, providing an additional layer of protection beyond traditional passwords...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">Multi-Factor Authentication (MFA) has become a cornerstone of modern cybersecurity, providing an additional layer of protection beyond traditional passwords.</p>
+      <div>
+        <p>Multi-Factor Authentication (MFA) has become a cornerstone of modern cybersecurity, providing an additional layer of protection beyond traditional passwords.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">MFA Factors Explained</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2"><strong>Knowledge Factors:</strong> Something you know (passwords, PINs)</li>
-          <li class="text-gray-700 mb-2"><strong>Possession Factors:</strong> Something you have (security keys, mobile devices)</li>
-          <li class="text-gray-700 mb-2"><strong>Inherence Factors:</strong> Something you are (biometrics, behavioral patterns)</li>
+        <h2 id="mfa-factors-explained">MFA Factors Explained</h2>
+        <ul>
+          <li><b>Knowledge Factors:</b> Something you know (passwords, PINs)</li>
+          <li><b>Possession Factors:</b> Something you have (security keys, mobile devices)</li>
+          <li><b>Inherence Factors:</b> Something you are (biometrics, behavioral patterns)</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Choosing the Right MFA Methods</h2>
-        <p class="text-gray-700 mb-4">Evaluate factors based on security requirements, user experience, deployment complexity, and total cost of ownership to select the optimal MFA solution for your organization.</p>
+        <h2 id="choosing-the-right-mfa-methods">Choosing the Right MFA Methods</h2>
+        <p>Evaluate factors based on security requirements, user experience, deployment complexity, and total cost of ownership to select the optimal MFA solution for your organization.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">MFA Implementation Best Practices</h2>
-        <p class="text-gray-700 mb-4">Phased rollout, comprehensive user education, and fallback mechanisms are essential for successful MFA implementation that balances security and usability.</p>
+        <h2 id="mfa-implementation-best-practices">MFA Implementation Best Practices</h2>
+        <p>Phased rollout, comprehensive user education, and fallback mechanisms are essential for successful MFA implementation that balances security and usability.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'mfa-factors-explained',
         title: 'MFA Factors Explained',
-        paragraphs: [
-          'Knowledge Factors: Something you know (passwords, PINs)',
-          'Possession Factors: Something you have (security keys, mobile devices)',
-          'Inherence Factors: Something you are (biometrics, behavioral patterns)',
-        ],
       },
       {
+        id: 'choosing-the-right-mfa-methods',
         title: 'Choosing the Right MFA Methods',
-        paragraphs: [
-          'Evaluate factors based on security requirements, user experience, deployment complexity, and total cost of ownership to select the optimal MFA solution for your organization.',
-        ],
       },
       {
+        id: 'mfa-implementation-best-practices',
         title: 'MFA Implementation Best Practices',
-        paragraphs: [
-          'Phased rollout, comprehensive user education, and fallback mechanisms are essential for successful MFA implementation that balances security and usability.',
-        ],
       },
     ],
     tags: [
@@ -1511,6 +1481,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Lisa Wang',
       handle: '@lisawang',
       avatar: '/images/TeamAvatar-7.png',
+      socialMedia: [
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/lisawang' },
+        { title: 'X', link: 'https://twitter.com/lisawang' },
+        { title: 'Link', link: 'https://github.com/lisawang' },
+      ],
     },
     date: 'December 16, 2024',
     image: '/images/BlogImg-6.jpg',
@@ -1519,45 +1494,36 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'As organizations continue their digital transformation journey, cloud security compliance has become more complex and critical than ever before...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">As organizations continue their digital transformation journey, cloud security compliance has become more complex and critical than ever before.</p>
+      <div>
+        <p>As organizations continue their digital transformation journey, cloud security compliance has become more complex and critical than ever before.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Key Compliance Frameworks</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2"><strong>GDPR:</strong> Data protection and privacy for EU citizens</li>
-          <li class="text-gray-700 mb-2"><strong>SOC 2:</strong> Security, availability, processing integrity</li>
-          <li class="text-gray-700 mb-2"><strong>ISO 27001:</strong> Information security management</li>
-          <li class="text-gray-700 mb-2"><strong>HIPAA:</strong> Healthcare data protection</li>
+        <h2 id="key-compliance-frameworks">Key Compliance Frameworks</h2>
+        <ul>
+          <li><b>GDPR:</b> Data protection and privacy for EU citizens</li>
+          <li><b>SOC 2:</b> Security, availability, processing integrity</li>
+          <li><b>ISO 27001:</b> Information security management</li>
+          <li><b>HIPAA:</b> Healthcare data protection</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Cloud-Specific Challenges</h2>
-        <p class="text-gray-700 mb-4">Shared responsibility models, data residency requirements, and continuous compliance monitoring present unique challenges in cloud environments that require specialized approaches.</p>
+        <h2 id="cloud-specific-challenges">Cloud-Specific Challenges</h2>
+        <p>Shared responsibility models, data residency requirements, and continuous compliance monitoring present unique challenges in cloud environments that require specialized approaches.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Automated Compliance Monitoring</h2>
-        <p class="text-gray-700 mb-4">Leverage cloud-native tools and third-party solutions to implement continuous compliance monitoring, automated reporting, and real-time alerting for compliance violations.</p>
+        <h2 id="automated-compliance-monitoring">Automated Compliance Monitoring</h2>
+        <p>Leverage cloud-native tools and third-party solutions to implement continuous compliance monitoring, automated reporting, and real-time alerting for compliance violations.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'key-compliance-frameworks',
         title: 'Key Compliance Frameworks',
-        paragraphs: [
-          'GDPR: Data protection and privacy for EU citizens',
-          'SOC 2: Security, availability, processing integrity',
-          'ISO 27001: Information security management',
-          'HIPAA: Healthcare data protection',
-        ],
       },
       {
+        id: 'cloud-specific-challenges',
         title: 'Cloud-Specific Challenges',
-        paragraphs: [
-          'Shared responsibility models, data residency requirements, and continuous compliance monitoring present unique challenges in cloud environments that require specialized approaches.',
-        ],
       },
       {
+        id: 'automated-compliance-monitoring',
         title: 'Automated Compliance Monitoring',
-        paragraphs: [
-          'Leverage cloud-native tools and third-party solutions to implement continuous compliance monitoring, automated reporting, and real-time alerting for compliance violations.',
-        ],
       },
     ],
     tags: ['Cloud Security', 'Compliance', 'GDPR', 'SOC2', 'Best Practices'],
@@ -1571,6 +1537,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Ryan Foster',
       handle: '@ryanfoster',
       avatar: '/images/TeamAvatar-8.png',
+      socialMedia: [
+        { title: 'X', link: 'https://twitter.com/ryanfoster' },
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/ryanfoster' },
+        { title: 'Link', link: 'https://medium.com/@ryanfoster' },
+      ],
     },
     date: 'December 15, 2024',
     image: '/images/BlogImg-7.jpg',
@@ -1579,45 +1550,36 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'Developer Experience (DX) has become a critical factor in the success of modern software projects. When it comes to IAM, the challenge is balancing security requirements with developer productivity...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">Developer Experience (DX) has become a critical factor in the success of modern software projects. When it comes to IAM, the challenge is balancing security requirements with developer productivity.</p>
+      <div>
+        <p>Developer Experience (DX) has become a critical factor in the success of modern software projects. When it comes to IAM, the challenge is balancing security requirements with developer productivity.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Common IAM Pain Points for Developers</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2">Complex authentication flows and SDK integration</li>
-          <li class="text-gray-700 mb-2">Inconsistent permission models across services</li>
-          <li class="text-gray-700 mb-2">Poor documentation and testing capabilities</li>
-          <li class="text-gray-700 mb-2">Lengthy onboarding and credential management</li>
+        <h2 id="common-iam-pain-points-for-developers">Common IAM Pain Points for Developers</h2>
+        <ul>
+          <li>Complex authentication flows and SDK integration</li>
+          <li>Inconsistent permission models across services</li>
+          <li>Poor documentation and testing capabilities</li>
+          <li>Lengthy onboarding and credential management</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">IAM Developer Experience Best Practices</h2>
-        <p class="text-gray-700 mb-4">Provide comprehensive SDKs, clear documentation, local development tools, and self-service capabilities to empower developers while maintaining security standards.</p>
+        <h2 id="iam-developer-experience-best-practices">IAM Developer Experience Best Practices</h2>
+        <p>Provide comprehensive SDKs, clear documentation, local development tools, and self-service capabilities to empower developers while maintaining security standards.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Measuring Developer Experience</h2>
-        <p class="text-gray-700 mb-4">Track metrics like integration time, authentication success rates, and developer satisfaction scores to continuously improve your IAM developer experience.</p>
+        <h2 id="measuring-developer-experience">Measuring Developer Experience</h2>
+        <p>Track metrics like integration time, authentication success rates, and developer satisfaction scores to continuously improve your IAM developer experience.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'common-iam-pain-points-for-developers',
         title: 'Common IAM Pain Points for Developers',
-        paragraphs: [
-          'Complex authentication flows and SDK integration',
-          'Inconsistent permission models across services',
-          'Poor documentation and testing capabilities',
-          'Lengthy onboarding and credential management',
-        ],
       },
       {
+        id: 'iam-developer-experience-best-practices',
         title: 'IAM Developer Experience Best Practices',
-        paragraphs: [
-          'Provide comprehensive SDKs, clear documentation, local development tools, and self-service capabilities to empower developers while maintaining security standards.',
-        ],
       },
       {
+        id: 'measuring-developer-experience',
         title: 'Measuring Developer Experience',
-        paragraphs: [
-          'Track metrics like integration time, authentication success rates, and developer satisfaction scores to continuously improve your IAM developer experience.',
-        ],
       },
     ],
     tags: ['Developer Experience', 'IAM', 'Productivity', 'Security', 'UX'],
@@ -1631,6 +1593,11 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Jennifer Liu',
       handle: '@jenniferliu',
       avatar: '/images/TeamAvatar-9.png',
+      socialMedia: [
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/jenniferliu' },
+        { title: 'X', link: 'https://twitter.com/jenniferliu' },
+        { title: 'Link', link: 'https://dev.to/jenniferliu' },
+      ],
     },
     date: 'December 14, 2024',
     image: '/images/BlogImg-8.jpg',
@@ -1639,45 +1606,36 @@ export const BLOG_POSTS: BlogPost[] = [
     content:
       'Identity Governance is the foundation of effective access management, providing the policies, processes, and technologies needed to manage user identities and access rights...',
     rawHtml: `
-      <div class="prose max-w-none">
-        <p class="text-lg text-gray-700 mb-6">Identity Governance is the foundation of effective access management, providing the policies, processes, and technologies needed to manage user identities and access rights.</p>
+      <div>
+        <p>Identity Governance is the foundation of effective access management, providing the policies, processes, and technologies needed to manage user identities and access rights.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Core Components of Identity Governance</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li class="text-gray-700 mb-2"><strong>Identity Lifecycle Management:</strong> Automated provisioning and deprovisioning</li>
-          <li class="text-gray-700 mb-2"><strong>Access Certification:</strong> Regular review and validation of user access</li>
-          <li class="text-gray-700 mb-2"><strong>Role-Based Access Control:</strong> Structured permission models</li>
-          <li class="text-gray-700 mb-2"><strong>Policy Management:</strong> Centralized security policies and rules</li>
+        <h2 id="core-components-of-identity-governance">Core Components of Identity Governance</h2>
+        <ul>
+          <li><b>Identity Lifecycle Management:</b> Automated provisioning and deprovisioning</li>
+          <li><b>Access Certification:</b> Regular review and validation of user access</li>
+          <li><b>Role-Based Access Control:</b> Structured permission models</li>
+          <li><b>Policy Management:</b> Centralized security policies and rules</li>
         </ul>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Implementing Access Certification</h2>
-        <p class="text-gray-700 mb-4">Establish regular access review cycles, define clear certification criteria, and automate reminder workflows to maintain continuous compliance and security.</p>
+        <h2 id="implementing-access-certification">Implementing Access Certification</h2>
+        <p>Establish regular access review cycles, define clear certification criteria, and automate reminder workflows to maintain continuous compliance and security.</p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Measuring Governance Effectiveness</h2>
-        <p class="text-gray-700 mb-4">Track metrics like orphaned accounts, segregation of duty violations, and certification completion rates to measure and improve your identity governance program.</p>
+        <h2 id="measuring-governance-effectiveness">Measuring Governance Effectiveness</h2>
+        <p>Track metrics like orphaned accounts, segregation of duty violations, and certification completion rates to measure and improve your identity governance program.</p>
       </div>
     `,
     tableOfContents: [
       {
+        id: 'core-components-of-identity-governance',
         title: 'Core Components of Identity Governance',
-        paragraphs: [
-          'Identity Lifecycle Management: Automated provisioning and deprovisioning',
-          'Access Certification: Regular review and validation of user access',
-          'Role-Based Access Control: Structured permission models',
-          'Policy Management: Centralized security policies and rules',
-        ],
       },
       {
+        id: 'implementing-access-certification',
         title: 'Implementing Access Certification',
-        paragraphs: [
-          'Establish regular access review cycles, define clear certification criteria, and automate reminder workflows to maintain continuous compliance and security.',
-        ],
       },
       {
+        id: 'measuring-governance-effectiveness',
         title: 'Measuring Governance Effectiveness',
-        paragraphs: [
-          'Track metrics like orphaned accounts, segregation of duty violations, and certification completion rates to measure and improve your identity governance program.',
-        ],
       },
     ],
     tags: [
