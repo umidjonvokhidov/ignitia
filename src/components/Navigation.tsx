@@ -67,7 +67,7 @@ export default function Navigation() {
       <div className="flex items-center gap-x-4">
         <Link href="/">
           <Image
-            src="icons/Logo-full.svg"
+            src="/icons/Logo-full.svg"
             alt="Logo"
             width={0}
             height={0}
