@@ -1,11 +1,16 @@
+"use client";
 import PricingCard from '@/components/PricingCard';
 import { PRICING_PLANS } from '@/lib/constants';
+import { usePathname } from 'next/navigation';
+import { twMerge } from 'tailwind-merge';
 
 export default function Pricing() {
+  const path = usePathname();
+
   return (
     <section className="flex flex-col w-full">
       <div className="flex justify-center md:justify-start items-center px-4 py-10 md:py-14 md:px-10 lg:py-16">
-        <h3 className="text-h5 md:text-h4 lg:text-h3 inline-block w-full max-w-[250px] md:max-w-[350px] text-center md:text-start">
+        <h3 className={twMerge("text-h5 md:text-h4 lg:text-h3 inline-block w-full max-w-[250px] md:max-w-[350px] text-center", path !== "/pricing" ? "md:text-start" : "mx-auto")}>
           Pricing that <span className="handwrite">scales</span> with you.
         </h3>
       </div>
