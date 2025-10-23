@@ -1077,7 +1077,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-1.png',
     },
     date: 'December 24, 2024',
-    image: '/images/blog/matrix-code-security.jpg',
+    image: '/images/BlogImg.jpg',
     excerpt:
       'Caching authentication keys in IAM systems can transform a security architecture from a fortress into a house of cards. Learn why security-first strategies should always take precedence over performance gains.',
     content:
@@ -1195,7 +1195,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-2.png',
     },
     date: 'December 20, 2024',
-    image: '/images/blog/fingerprint-biometric.jpg',
+    image: '/images/BlogImg-1.jpg',
     excerpt:
       'Discover how passkeys are revolutionizing authentication by eliminating passwords while providing stronger security through biometric and device-based authentication.',
     content:
@@ -1264,7 +1264,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-3.png',
     },
     date: 'December 19, 2024',
-    image: '/images/blog/coding-laptop-purple.jpg',
+    image: '/images/BlogImg-2.jpg',
     excerpt:
       'A comprehensive guide to creating effective engineering career ladders that promote growth, clarity, and retention in your development teams.',
     content:
@@ -1330,7 +1330,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-4.png',
     },
     date: 'December 20, 2024',
-    image: '/images/blog/microchip-circuit.jpg',
+    image: '/images/BlogImg-3.jpg',
     excerpt:
       'Learn the most effective strategies for implementing API rate limiting to protect your services from abuse while maintaining optimal performance for legitimate users.',
     content:
@@ -1391,7 +1391,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-5.png',
     },
     date: 'December 18, 2024',
-    image: '/images/blog/ai-microchip.jpg',
+    image: '/images/BlogImg-4.jpg',
     excerpt:
       'Explore how to implement Zero Trust principles in your identity and access management strategy to create a more secure and resilient security posture.',
     content:
@@ -1449,7 +1449,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-6.png',
     },
     date: 'December 17, 2024',
-    image: '/images/blog/golden-padlock.jpg',
+    image: '/images/BlogImg-5.jpg',
     excerpt:
       "Everything you need to know about implementing and managing multi-factor authentication to significantly enhance your organization's security posture.",
     content:
@@ -1513,7 +1513,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-7.png',
     },
     date: 'December 16, 2024',
-    image: '/images/blog/cloud-icon-well.jpg',
+    image: '/images/BlogImg-6.jpg',
     excerpt:
       'Stay ahead of evolving compliance requirements with our comprehensive guide to cloud security standards and best practices for 2024.',
     content:
@@ -1573,7 +1573,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-8.png',
     },
     date: 'December 15, 2024',
-    image: '/images/blog/laptop-keyboard-typing.jpg',
+    image: '/images/BlogImg-7.jpg',
     excerpt:
       'Learn how to balance security requirements with developer productivity by implementing IAM solutions that developers actually want to use.',
     content:
@@ -1633,7 +1633,7 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: '/images/TeamAvatar-9.png',
     },
     date: 'December 14, 2024',
-    image: '/images/blog/security-layers.jpg',
+    image: '/images/BlogImg-8.jpg',
     excerpt:
       'Discover the essential components of a robust identity governance framework that ensures compliance, security, and operational efficiency.',
     content:
