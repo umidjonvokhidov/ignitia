@@ -1,6 +1,7 @@
 import CustomButton from '@/components/CustomButton';
 import { BLOG_POSTS } from '@/lib/constants';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Blog() {
   return (
@@ -16,7 +17,7 @@ export default function Blog() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 bg-white/8 gap-0.25 border-y border-white/8 ">
         {BLOG_POSTS.slice(0, 1).map(
-          ({ category, title, date, image }: BlogPost) => (
+          ({ category, title, date, image, id }: BlogPost) => (
             <div key={title} className="grid-cols-2 col-span-2 hidden md:grid">
               <div className="p-10  border border-white/8 border-y-0 bg-[#0B0C0C] relative">
                 <div className="absolute w-full bg-white/4 h-full top-0 left-0" />
@@ -31,7 +32,9 @@ export default function Blog() {
               <div className="flex flex-col items-start gap-y-6 p-10 lg:p-20 lg:gap-y-10 bg-[#0B0C0C]">
                 <div className="flex flex-col items-start gap-y-4">
                   <h6 className="handwrite text-sm not-italic">{category}</h6>
-                  <h4 className="text-h5 lg:text-h4">{title}</h4>
+                  <Link href={`blog/${id}`} className="text-h5 lg:text-h4 hover:text-primary-300 transition-all">
+                    {title}
+                  </Link>
                 </div>
                 <p className="body-text-small-medium">{date}</p>
               </div>
@@ -39,7 +42,7 @@ export default function Blog() {
           ),
         )}
         {BLOG_POSTS.slice(0, 1).map(
-          ({ category, title, date, image }: BlogPost) => (
+          ({ category, title, date, image, id }: BlogPost) => (
             <div
               className="grid grid-cols-1 p-4 md:p-6 lg:p-10 gap-y-6 md:hidden lg:grid-cols-2 gap-x-6 bg-[#0B0C0C]"
               key={title}
@@ -54,7 +57,9 @@ export default function Blog() {
               <div className="flex flex-col items-start gap-y-6">
                 <div className="flex flex-col items-start gap-y-4">
                   <h6 className="handwrite text-sm not-italic">{category}</h6>
-                  <h4 className="text-h6">{title}</h4>
+                  <Link href={`blog/${id}`} className="text-h6 hover:text-primary-300 transition-all">
+                    {title}
+                  </Link>
                 </div>
                 <p className="body-text-small-medium">{date}</p>
               </div>
@@ -62,7 +67,7 @@ export default function Blog() {
           ),
         )}
         {BLOG_POSTS.slice(1).map(
-          ({ category, title, date, image }: BlogPost) => (
+          ({ category, title, date, image,id }: BlogPost) => (
             <div
               className="grid grid-cols-1 p-4 md:p-6 lg:p-10 gap-y-6 lg:grid-cols-2 gap-x-6 bg-[#0B0C0C]"
               key={title}
@@ -77,7 +82,9 @@ export default function Blog() {
               <div className="flex flex-col items-start gap-y-6">
                 <div className="flex flex-col items-start gap-y-4">
                   <h6 className="handwrite text-sm not-italic">{category}</h6>
-                  <h4 className="text-h6">{title}</h4>
+                    <Link href={`blog/${id}`} className="text-h6 hover:text-primary-300 transition-all">
+                    {title}
+                  </Link>
                 </div>
                 <p className="body-text-small-medium">{date}</p>
               </div>

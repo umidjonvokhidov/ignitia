@@ -1,12 +1,15 @@
-import Heading from "@/sections/Heading";
-import Content from "@/sections/Content";
-import PatternDivider from "@/components/PatternDivider";
+import Heading from '@/sections/Heading';
+import Content from '@/sections/Content';
+import PatternDivider from '@/components/PatternDivider';
 
-export default function BlogDetailPage() {
+export default function BlogDetailPage({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
   return (
     <>
-      <Heading />
-      <Content />
+      <h1>{slug}</h1>
       <PatternDivider />
     </>
   );
