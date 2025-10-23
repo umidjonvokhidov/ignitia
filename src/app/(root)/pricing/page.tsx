@@ -12,7 +12,7 @@ export default function PricingPage() {
       <Advantage />
       <PatternDivider />
       <ComparePlan />
-      <PatternDivider />
+      <PatternDivider className="hidden md:block" />
       <CTA />
       <PatternDivider />
     </>
