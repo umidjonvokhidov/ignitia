@@ -63,7 +63,7 @@ export default function Navigation() {
   }, [open]);
 
   return (
-    <nav className="flex items-center justify-between z-10 bg-[#0B0C0C] h-[92px] bg- sticky top-0 p-6 border-y border-white/[0.08]">
+    <nav className="flex items-center justify-between z-10 bg-[#0B0C0C] h-[92px] sticky top-0 p-6 border-y border-white/[0.08]">
       <div className="flex items-center gap-x-4">
         <Link href="/">
           <Image

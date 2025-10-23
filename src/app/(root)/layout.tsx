@@ -8,7 +8,7 @@ export default function PagesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="relative mx-auto w-full grid grid-cols-[40px_1fr_40px] md:grid-cols-[80px_1fr_80px] xl:grid-cols-[120px_1fr_120px] max-w-[1536px] overflow-hidden">
+    <main className="relative mx-auto w-full grid grid-cols-[40px_1fr_40px] md:grid-cols-[80px_1fr_80px] xl:grid-cols-[120px_1fr_120px] max-w-[1536px]">
       <div className="h-full relative w-full bg-[url(/icons/Pattern.svg)] bg-[length:120px_120px] bg-repeat border-x border-white/8" />
       <div className="w-full min-w-0 flex flex-col">
         <TopBanner />
