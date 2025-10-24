@@ -8,6 +8,9 @@ import ReactIcon from '@/public/icons/React.svg';
 import VueJSIcon from '@/public/icons/VueJS.svg';
 import KotlinIcon from '@/public/icons/Kotlin.svg';
 
+import ShieldIcon from '@/public/icons/shield.svg';
+import LoaderIcon from '@/public/icons/loader.svg';
+
 // Import Social Proof Company Logos
 import CompanyLogo from '@/public/icons/CompanyLogo.svg';
 import CompanyLogo1 from '@/public/icons/CompanyLogo-1.svg';
@@ -1673,6 +1676,19 @@ export const BLOG_POSTS: BlogPost[] = [
       'Framework',
     ],
     readTime: '10 min read',
+  },
+];
+
+export const RegisterPageFeatures: RegisterPageFeature[] = [
+  {
+    icon: ShieldIcon,
+    title: 'Advanced Security',
+    description: 'Ensures security with multi-factor authentication (MFA).',
+  },
+  {
+    icon: LoaderIcon,
+    title: 'Flexible Access',
+    description: 'You can access all your applications with one click.',
   },
 ];
 

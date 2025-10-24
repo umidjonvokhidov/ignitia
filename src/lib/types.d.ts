@@ -200,6 +200,12 @@ declare interface SocialM {
   link: string;
 }
 
+declare interface RegisterPageFeature {
+  icon: React.ComponentType<SVGProps<SVGSVGElement>>;
+  title: string;
+  description: string;
+}
+
 declare interface BlogPost {
   id: string;
   title: string;
