@@ -340,9 +340,14 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-[#0B0C0C] text-white;
     font-family: var(--font-inter);
+    scroll-behavior: smooth;
   }
 
   .hero {
