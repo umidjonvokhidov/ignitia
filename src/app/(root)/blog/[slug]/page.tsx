@@ -23,8 +23,8 @@ export default async function BlogDetailPage({
     .toUpperCase();
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] scroll-smooth">
-      <aside className="hidden md:flex flex-col">
+    <section className="flex items-start relative scroll-smooth">
+      <aside className="hidden md:flex flex-col sticky top-[92px] min-w-[300px] lg:min-w-[360px]">
         <div className="p-10 flex flex-col gap-y-4">
           <h4 className="text-xs text-neutral-500 leading-4">
             TABLE OF CONTENT
