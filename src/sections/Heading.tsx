@@ -5,7 +5,7 @@ export default function Heading() {
       <h3 className="text-h5 md:text-h4 lg:text-h3 max-w-[600px] text-center">
         Every journey begins with the <span className="handwrite">user</span>
       </h3>
-      <p className="body-text-small-regular text-center max-w-[650px]">
+      <p className="body-text-medium-regular text-center max-w-[650px]">
         Ignitia is on a mission to solve user management once and for all. We
         are a globally distributed team dedicated to providing the best
         developer experience with obsessive attention to every detail.

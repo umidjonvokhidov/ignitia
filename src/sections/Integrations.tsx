@@ -50,12 +50,12 @@ export default function Integrations() {
               className="aspect-square flex justify-center items-center transition-all bg-[#0B0C0C] duration-500 overflow-hidden grid-item"
               style={
                 {
-                  ['--col' as any]: col,
-                  ['--row' as any]: row,
-                  ['--mdcol' as any]: mdcol,
-                  ['--mdrow' as any]: mdrow,
-                  ['--lgcol' as any]: lgcol,
-                  ['--lgrow' as any]: lgrow,
+                  ['--col']: col,
+                  ['--row']: row,
+                  ['--mdcol']: mdcol,
+                  ['--mdrow']: mdrow,
+                  ['--lgcol']: lgcol,
+                  ['--lgrow']: lgrow,
                 } as React.CSSProperties
               }
             >

@@ -1,11 +1,11 @@
-import Integrations from "@/sections/Integrations";
-import PatternDivider from "@/components/PatternDivider";
-import CTA from "@/sections/CTA";
+import PatternDivider from '@/components/PatternDivider';
+import CTA from '@/sections/CTA';
+import IntegrationsMain from '@/sections/IntegrationsMain';
 
 export default function IntegrationsPage() {
   return (
     <>
-      <Integrations />
+      <IntegrationsMain />
       <PatternDivider />
       <CTA />
       <PatternDivider />

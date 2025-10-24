@@ -27,7 +27,7 @@ export default function About() {
         </div>
         <div className="w-full md:w-auto flex flex-col md:flex-row items-center justify-center border-x border-white/8">
           {ABOUT_CARDS.map(
-            ({ logo: Logo, description, title }: AboutCard, index: Number) => (
+            ({ logo: Logo, description, title }: AboutCard, index: number) => (
               <div
                 key={title}
                 className={twMerge(
