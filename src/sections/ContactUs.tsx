@@ -6,7 +6,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton, useDotButton } from '@/components/EmblaCarouselDotButton';
 import { twMerge } from 'tailwind-merge';
 import { z } from 'zod';
-import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,

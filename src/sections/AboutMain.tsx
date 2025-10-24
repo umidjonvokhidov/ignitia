@@ -1,8 +1,5 @@
-import CustomButton from '@/components/CustomButton';
-import { ABOUT_CARDS, ABOUT_FEATURES, COMPANY_LIST } from '@/lib/constants';
-import Logo from '@/public/icons/Logo.svg';
+import { ABOUT_FEATURES, COMPANY_LIST } from '@/lib/constants';
 import Marquee from 'react-fast-marquee';
-import { twMerge } from 'tailwind-merge';
 
 export default function AboutMain() {
   return (
