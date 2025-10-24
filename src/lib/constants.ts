@@ -447,6 +447,33 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
 ];
 
+export const TESTIMONIALSv2: Testimonial[] = [
+  {
+    avatar: '/images/AvatarTestimonial.png',
+    name: 'Sarah Mansy',
+    title: 'CTO',
+    company: 'TechWave Solutions',
+    quote:
+      "Ignitia transformed our user authentication process with seamless SSO and robust MFA features. It's incredibly intuitive and scalable, making it the perfect solution for our growing tech company.",
+  },
+  {
+    avatar: '/images/AvatarTestimonial-1.png',
+    name: 'James Loki',
+    title: 'Director of IT',
+    company: 'MediSecure Healthcare',
+    quote:
+      "Ignitia's comprehensive security features and advanced compliance tools have transformed our healthcare operations. The platform's robust authentication and detailed audit capabilities ensure we meet all regulatory requirements while maintaining seamless access for our medical staff.",
+  },
+  {
+    avatar: '/images/AvatarTestimonial-2.png',
+    name: 'Jenny Wilson',
+    title: 'Founder',
+    company: 'BrightSpark Retail',
+    quote:
+      "Ignitia has revolutionized our access management across multiple retail locations and systems. The platform's intuitive interface and automated provisioning features have streamlined our operations while scaling perfectly with our expanding business needs.",
+  },
+];
+
 export const TESTIMONIALS: Testimonial[] = [
   {
     avatar: '/images/AvatarTestimonial.png',

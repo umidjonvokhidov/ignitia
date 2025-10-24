@@ -19,7 +19,7 @@ const TestimonialCard = ({
   return (
     <div
       key={name}
-      className={twMerge("grid grid-cols-1 gap-y-6 p-6 rounded-xl border border-white/8 bg-white/4 shadow-[0px_2px_4px_-1px_rgba(14,18,27,0.08)]", className)}
+      className={twMerge("flex flex-col gap-y-6 p-6 rounded-xl border border-white/8 bg-white/4 shadow-[0px_2px_4px_-1px_rgba(14,18,27,0.08)]", className)}
     >
       <div className="flex items-center gap-x-3">
         <Avatar className="size-11">
