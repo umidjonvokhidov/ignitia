@@ -23,8 +23,8 @@ export default async function BlogDetailPage({
     .toUpperCase();
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-[300px_1fr] relative lg:grid-cols-[360px_1fr]">
-      <aside className="hidden md:flex flex-col sticky top-0">
+    <section className="grid grid-cols-1 md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] scroll-smooth">
+      <aside className="hidden md:flex flex-col">
         <div className="p-10 flex flex-col gap-y-4">
           <h4 className="text-xs text-neutral-500 leading-4">
             TABLE OF CONTENT
@@ -32,7 +32,7 @@ export default async function BlogDetailPage({
           <div className="flex flex-col items-start">
             {blog?.tableOfContents?.map(({ id, title }: BlogToC) => (
               <Link
-                className="body-text-medium-regular px-4 text-neutral-500 first:border-l-[3px] border-[#377AFB] first:body-text-medium-semi-bold first:text-white"
+                className="body-text-medium-regular px-4 ease-in text-neutral-500 border-l-[3px] border-transparent hover:border-[#377AFB] hover:body-text-medium-semi-bold hover:text-white transition-all"
                 key={id}
                 href={`#${id}`}
               >
@@ -103,7 +103,7 @@ export default async function BlogDetailPage({
           </div>
         </div>
       </aside>
-      <main className="border-l border-white/8">
+       <main className="border-l border-white/8 scroll-smooth">
         <div className="flex flex-col gap-y-4 p-6 md:p-8 lg:p-10">
           <h5 className="text-sm handwrite not-italic">{blog?.category}</h5>
           <h1 className="text-h6 md:text-h5 lg:text-h4">{blog?.title}</h1>
@@ -124,7 +124,7 @@ export default async function BlogDetailPage({
         <div className="p-6 md:p-8 lg:p-10 ">
           {blog?.rawHtml && (
             <div
-              className="[&_p]:body-text-medium-regular md:[&_p]:body-text-large-regular flex flex-col gap-y-8 lg:gap-y-10 [&_div]:flex [&_div]:flex-col [&_div]:gap-y-6 [&_h2]:md:!text-h5 [&_h2]:text-h6 [&_b]:body-text-large-semi-bold [&_b]:text-white [&_p]:text-neutral-500 [&_ul]:list-disc [&_ul]:list-inside [&_li]:text-neutral-500 md:[&_li]:body-text-large-regular [&_li]:body-text-medium-regular"
+              className="[&_p]:body-text-medium-regular md:[&_p]:body-text-large-regular flex flex-col gap-y-8 lg:gap-y-10 [&_div]:flex [&_div]:flex-col [&_div]:gap-y-6 [&_h2]:md:!text-h5 [&_h2]:scroll-mt-[100px] [&_h2]:text-h6 [&_b]:body-text-large-semi-bold [&_b]:text-white [&_p]:text-neutral-500 [&_ul]:list-disc [&_ul]:list-inside [&_li]:text-neutral-500 md:[&_li]:body-text-large-regular [&_li]:body-text-medium-regular"
               dangerouslySetInnerHTML={{ __html: blog.rawHtml }}
             />
           )}
