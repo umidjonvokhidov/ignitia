@@ -115,12 +115,18 @@ export default function Features() {
               />
               <FormField
                 control={form.control}
-                name="email"
+                name="remember"
                 render={({ field }) => (
                   <FormItem>
                     <div className="flex items-center gap-x-3 justify-center md:justify-start">
                       <FormControl>
-                        <Checkbox {...field} />
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          onBlur={field.onBlur}
+                          name={field.name}
+                          ref={field.ref}
+                        />
                       </FormControl>
                       <FormLabel>Remember me</FormLabel>
                     </div>

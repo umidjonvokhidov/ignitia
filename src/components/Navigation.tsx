@@ -125,8 +125,10 @@ export default function Navigation() {
         </NavigationMenu>
       </div>
       <div className="hidden lg:flex items-center gap-x-2">
-        <CustomButton type="secondary">Login</CustomButton>
-        <CustomButton>Request a Demo</CustomButton>
+        <CustomButton type="secondary" href="/auth/login">
+          Login
+        </CustomButton>
+        <CustomButton href="/auth/login">Request a Demo</CustomButton>
       </div>
       <Lottie
         lottieRef={lottieRef}
@@ -194,8 +196,10 @@ export default function Navigation() {
               )}
             </Accordion>
             <div className="flex items-center flex-col gap-y-2 w-3/5 mx-auto">
-              <CustomButton type="secondary">Login</CustomButton>
-              <CustomButton>Request a Demo</CustomButton>
+              <CustomButton type="secondary" href="/auth/login">
+                Login
+              </CustomButton>
+              <CustomButton href="/auth/login">Request a Demo</CustomButton>
             </div>
           </AccordionContent>
         </AccordionItem>
