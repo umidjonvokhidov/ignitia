@@ -174,7 +174,7 @@ export default function LoginPage() {
       <p className="max-w-[624px] body-text-small-regular text-center">
         By logging in, I agree to the{' '}
         <Link
-          href="/terms-services"
+          href="/terms-conditions"
           className="text-white underline underline-offset-4"
         >
           Terms of service

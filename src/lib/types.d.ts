@@ -227,7 +227,7 @@ declare interface BlogPost {
   featured?: boolean;
 }
 
-declare interface PolicyLink {
+declare interface LegalLink {
   id: string;
   name: string;
 }
