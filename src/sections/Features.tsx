@@ -23,6 +23,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import CustomButton from '@/components/CustomButton';
 import Info from '@/public/icons/info.svg';
 import Image from 'next/image';
+import MailIcon from '@/public/icons/mail.svg';
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
@@ -96,11 +97,14 @@ export default function Features() {
                       <p className="text-neutral-500">Help</p>
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="e.g: johndoe@gmail.com"
-                        className="h-12 rounded-md"
-                        {...field}
-                      />
+                      <div className="w-full relative">
+                        <MailIcon className="absolute scale-70 text-neutral-500 left-3 top-1/2 -translate-y-1/2" />
+                        <Input
+                          placeholder="e.g: johndoe@gmail.com"
+                          className="h-10 md:h-12 rounded-md pl-11"
+                          {...field}
+                        />
+                      </div>
                     </FormControl>
                     <FormDescription className="flex items-center gap-x-1">
                       <Info className="text-[#CACFD8]" />

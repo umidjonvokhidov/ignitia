@@ -20,6 +20,7 @@ import Info from '@/public/icons/info.svg';
 import CustomButton from '@/components/CustomButton';
 import GoogleIcon from '@/public/icons/google-login.svg';
 import { Checkbox } from '@/components/ui/checkbox';
+import MailIcon from '@/public/icons/mail.svg';
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
@@ -69,7 +70,7 @@ export default function LoginPage() {
             render={({ field }) => (
               <FormItem className="flex flex-col items-start gap-y-1 justify-center">
                 <FormLabel className="body-text-small-medium flex items-center justify-between w-full">
-                  <div className="flex items-center">
+                  <div className="flex items-center w-full">
                     <div className="inline-block">
                       Work email <span className="text-red-700 text-lg">*</span>{' '}
                       <span className="text-neutral-600">(Optional)</span>
@@ -79,11 +80,14 @@ export default function LoginPage() {
                   <p className="text-neutral-500">Help</p>
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="e.g: johndoe@gmail.com"
-                    className="h-10 md:h-12 rounded-md"
-                    {...field}
-                  />
+                  <div className="w-full relative">
+                    <MailIcon className="absolute scale-70 text-neutral-500 left-3 top-1/2 -translate-y-1/2" />
+                    <Input
+                      placeholder="e.g: johndoe@gmail.com"
+                      className="h-10 md:h-12 rounded-md pl-11"
+                      {...field}
+                    />
+                  </div>
                 </FormControl>
                 <FormDescription className="flex items-center gap-x-1">
                   <Info className="text-[#CACFD8]" />
@@ -111,7 +115,7 @@ export default function LoginPage() {
                       disabled={field.disabled}
                     />
                   </FormControl>
-                  <FormLabel>Remember me</FormLabel>
+                  <FormLabel className="cursor-pointer">Remember me</FormLabel>
                 </div>
                 <FormMessage />
               </FormItem>
@@ -137,7 +141,7 @@ export default function LoginPage() {
           href="#"
         >
           <GoogleIcon />
-          <span>Sign Up with Google</span>
+          <span>Login with Google</span>
         </CustomButton>
         <CustomButton
           className="gap-x-2 h-10 md:h-12 !w-full max-w-[448px] max-h-10 md:max-h-12 rounded-[12px]"
@@ -156,7 +160,10 @@ export default function LoginPage() {
       </div>
       <div className="flex items-center justify-center flex-wrap">
         <p className="text-white">Forgot your password?</p>
-        <Link href="/auth/forgot-password" className="flex items-center gap-x-1">
+        <Link
+          href="/auth/forgot-password"
+          className="flex items-center gap-x-1"
+        >
           <ChevronUp className="-rotate-90 text-primary-500" />
           <span className="text-primary-500 body-text-small-medium">
             Reset it here
