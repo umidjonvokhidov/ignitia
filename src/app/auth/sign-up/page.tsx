@@ -19,14 +19,11 @@ import { useForm } from 'react-hook-form';
 import Info from '@/public/icons/info.svg';
 import CustomButton from '@/components/CustomButton';
 import GoogleIcon from '@/public/icons/google-login.svg';
-import { CodeBlock } from 'react-code-block';
 import { FRAMEWORKS, RegisterPageFeatures } from '@/lib/constants';
-import { PrismTheme, themes, Language } from 'prism-react-renderer';
 import Image from 'next/image';
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
-  remember: z.boolean(),
 });
 
 export default function SignUpPage() {
@@ -34,7 +31,6 @@ export default function SignUpPage() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: '',
-      remember: false,
     },
   });
 
@@ -47,7 +43,7 @@ export default function SignUpPage() {
       <div className="flex-col justify-center bg-white/4 w-full hidden lg:flex border-r border-white/8 h-full">
         <div className="h-full flex flex-col gap-y-10 p-10">
           <div className="flex items-center gap-2 flex-wrap justify-center">
-            <div className='flex items-center gap-2'>
+            <div className="flex items-center gap-2">
               {FRAMEWORKS.slice(0, 3).map(({ icon: Icon, name }: Framework) => (
                 <div
                   className="border-white/8 border bg-white/4 cursor-pointer group rounded-[12px] p-5 hover:border-primary-500 transition-all hover:shadow-[inset_0px_0px_16px_3px_rgba(62,111,243,0.50)]"
@@ -57,7 +53,7 @@ export default function SignUpPage() {
                 </div>
               ))}
             </div>
-            <div className='flex items-center gap-2'>
+            <div className="flex items-center gap-2">
               {FRAMEWORKS.slice(3, 6).map(({ icon: Icon, name }: Framework) => (
                 <div
                   className="border-white/8 border bg-white/4 cursor-pointer group rounded-[12px] p-5 hover:border-primary-500 transition-all hover:shadow-[inset_0px_0px_16px_3px_rgba(62,111,243,0.50)]"
@@ -103,7 +99,7 @@ export default function SignUpPage() {
             Create an <span className="handwrite">account.</span>
           </h1>
           <div className="flex items-center justify-center flex-wrap">
-            <p>Already have an account?</p>
+            <p className='text-white'>Already have an account?</p>
             <Link href="/auth/login" className="flex items-center gap-x-1">
               <ChevronUp className="-rotate-90 text-primary-500" />
               <span className="text-primary-500 body-text-small-medium">
