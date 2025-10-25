@@ -21,6 +21,7 @@ import CustomButton from '@/components/CustomButton';
 import GoogleIcon from '@/public/icons/google-login.svg';
 import { FRAMEWORKS, RegisterPageFeatures } from '@/lib/constants';
 import Image from 'next/image';
+import MailIcon from '@/public/icons/mail.svg';
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
@@ -99,7 +100,7 @@ export default function SignUpPage() {
             Create an <span className="handwrite">account.</span>
           </h1>
           <div className="flex items-center justify-center flex-wrap">
-            <p className='text-white'>Already have an account?</p>
+            <p className="text-white">Already have an account?</p>
             <Link href="/auth/login" className="flex items-center gap-x-1">
               <ChevronUp className="-rotate-90 text-primary-500" />
               <span className="text-primary-500 body-text-small-medium">
@@ -121,7 +122,7 @@ export default function SignUpPage() {
                 <FormItem className="flex flex-col items-start gap-y-1 justify-center">
                   <FormLabel className="body-text-small-medium flex items-center justify-between w-full">
                     <div className="flex items-center">
-                      <div className="inline-block">
+                      <div className="inline-block w-full">
                         Work email{' '}
                         <span className="text-red-700 text-lg">*</span>{' '}
                         <span className="text-neutral-600">(Optional)</span>
@@ -131,11 +132,14 @@ export default function SignUpPage() {
                     <p className="text-neutral-500">Help</p>
                   </FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="e.g: johndoe@gmail.com"
-                      className="h-10 md:h-12 rounded-md"
-                      {...field}
-                    />
+                    <div className="w-full relative">
+                      <MailIcon className="absolute scale-70 text-neutral-500 left-3 top-1/2 -translate-y-1/2" />
+                      <Input
+                        placeholder="e.g: johndoe@gmail.com"
+                        className="h-10 md:h-12 rounded-md pl-11"
+                        {...field}
+                      />
+                    </div>
                   </FormControl>
                   <FormDescription className="flex items-center gap-x-1">
                     <Info className="text-[#CACFD8]" />
