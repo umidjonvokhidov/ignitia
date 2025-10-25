@@ -103,7 +103,7 @@ export default async function BlogDetailPage({
           </div>
         </div>
       </aside>
-       <main className="border-l border-white/8 scroll-smooth">
+      <main className="border-l border-white/8 scroll-smooth">
         <div className="flex flex-col gap-y-4 p-6 md:p-8 lg:p-10">
           <h5 className="text-sm handwrite not-italic">{blog?.category}</h5>
           <h1 className="text-h6 md:text-h5 lg:text-h4">{blog?.title}</h1>
@@ -124,7 +124,7 @@ export default async function BlogDetailPage({
         <div className="p-6 md:p-8 lg:p-10 ">
           {blog?.rawHtml && (
             <div
-              className="[&_p]:body-text-medium-regular md:[&_p]:body-text-large-regular flex flex-col gap-y-8 lg:gap-y-10 [&_div]:flex [&_div]:flex-col [&_div]:gap-y-6 [&_h2]:md:!text-h5 [&_h2]:scroll-mt-[100px] [&_h2]:text-h6 [&_b]:body-text-large-semi-bold [&_b]:text-white [&_p]:text-neutral-500 [&_ul]:list-disc [&_ul]:list-inside [&_li]:text-neutral-500 md:[&_li]:body-text-large-regular [&_li]:body-text-medium-regular"
+              className="prose prose-headings:text-white w-full max-w-full prose-a:text-white prose-strong:text-white prose-p:text-neutral-500 prose-li:text-neutral-500 prose-h2:scroll-mt-[100px] prose-h2:text-h6 lg:prose-h2:text-h5 md:prose-strong:body-text-medium-medium prose-strong:body-text-small-medium prose-p:body-text-small-regular md:prose-p:body-text-medium-regular"
               dangerouslySetInnerHTML={{ __html: blog.rawHtml }}
             />
           )}

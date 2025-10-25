@@ -1138,19 +1138,19 @@ export const BLOG_POSTS: BlogPost[] = [
         <p>If an attacker gains access to a cached key store, they immediately get a comprehensive map of potential access points, dramatically expanding the attack surface.</p>
         
         <h2 id="technical-vulnerabilities-in-key-caching">Technical Vulnerabilities in Key Caching</h2>
-        <p><b>Token Replay and Replay Attacks</b> Intercepted or stolen cached keys can be reused multiple times before cache invalidation, granting extended unauthorized access.</p>
+        <p><strong>Token Replay and Replay Attacks</strong> Intercepted or stolen cached keys can be reused multiple times before cache invalidation, granting extended unauthorized access.</p>
         
-        <p><b>Race Conditions in Distributed Systems</b> In distributed environments, cached keys can cause complex race conditions where permission updates don't immediately propagate across all cached instances, leading to inconsistent and unpredictable access control.</p>
+        <p><strong>Race Conditions in Distributed Systems</strong> In distributed environments, cached keys can cause complex race conditions where permission updates don't immediately propagate across all cached instances, leading to inconsistent and unpredictable access control.</p>
         
-        <p><b>Insufficient Hashing Methods leading to Credential Bypass</b> Choosing the right parameters for computing hash keys is crucial. Using methods like CRC32, which has a small target space, can lead to key collisions and credential bypass scenarios.</p>
+        <p><strong>Insufficient Hashing Methods leading to Credential Bypass</strong> Choosing the right parameters for computing hash keys is crucial. Using methods like CRC32, which has a small target space, can lead to key collisions and credential bypass scenarios.</p>
         
         <h2 id="best-practices-for-secure-authentication">Best practices for secure authentication</h2>
         <p>Instead of caching keys, implement these security-first strategies:</p>
         <ul>
-          <li><b>Short-lived Tokens:</b> Use time-bound access tokens with minimal lifespans.</li>
-          <li><b>Real-time Verification:</b> Validate permissions at each critical access point.</li>
-          <li><b>Centralized Authorization:</b> Maintain a single source of truth for access rights.</li>
-          <li><b>Dynamic Permission Checks:</b> Evaluate permissions in real-time during each request.</li>
+          <li><strong>Short-lived Tokens:</strong> Use time-bound access tokens with minimal lifespans.</li>
+          <li><strong>Real-time Verification:</strong> Validate permissions at each critical access point.</li>
+          <li><strong>Centralized Authorization:</strong> Maintain a single source of truth for access rights.</li>
+          <li><strong>Dynamic Permission Checks:</strong> Evaluate permissions in real-time during each request.</li>
         </ul>
         
         <h2 id="performance-considerations">Performance considerations</h2>
@@ -1236,10 +1236,10 @@ export const BLOG_POSTS: BlogPost[] = [
         
         <h2 id="benefits-of-passkeys">Benefits of Passkeys</h2>
         <ul>
-          <li><b>Enhanced Security:</b> Resistant to phishing, credential stuffing, and other common attacks</li>
-          <li><b>Better User Experience:</b> No need to remember or type passwords</li>
-          <li><b>Cross-Platform:</b> Works across devices and platforms</li>
-          <li><b>Biometric Integration:</b> Uses fingerprint, face recognition, or device PIN</li>
+          <li><strong>Enhanced Security:</strong> Resistant to phishing, credential stuffing, and other common attacks</li>
+          <li><strong>Better User Experience:</strong> No need to remember or type passwords</li>
+          <li><strong>Cross-Platform:</strong> Works across devices and platforms</li>
+          <li><strong>Biometric Integration:</strong> Uses fingerprint, face recognition, or device PIN</li>
         </ul>
         
         <h2 id="implementation-considerations">Implementation Considerations</h2>
@@ -1296,10 +1296,10 @@ export const BLOG_POSTS: BlogPost[] = [
         
         <h2 id="key-components-of-a-career-ladder">Key Components of a Career Ladder</h2>
         <ul>
-          <li><b>Level Definitions:</b> Clear descriptions of each level and expectations</li>
-          <li><b>Skills Matrix:</b> Technical and soft skills required at each level</li>
-          <li><b>Promotion Criteria:</b> Objective measures for advancement</li>
-          <li><b>Compensation Ranges:</b> Salary bands aligned with levels</li>
+          <li><strong>Level Definitions:</strong> Clear descriptions of each level and expectations</li>
+          <li><strong>Skills Matrix:</strong> Technical and soft skills required at each level</li>
+          <li><strong>Promotion Criteria:</strong> Objective measures for advancement</li>
+          <li><strong>Compensation Ranges:</strong> Salary bands aligned with levels</li>
         </ul>
         
         <h2 id="implementation-best-practices">Implementation Best Practices</h2>
@@ -1413,9 +1413,9 @@ export const BLOG_POSTS: BlogPost[] = [
         
         <h2 id="core-principles-of-zero-trust">Core Principles of Zero Trust</h2>
         <ul>
-          <li><b>Verify Explicitly:</b> Authenticate and authorize based on all available data points</li>
-          <li><b>Use Least Privilege Access:</b> Limit user access with just-in-time and just-enough-access principles</li>
-          <li><b>Assume Breach:</b> Design systems with the assumption that attackers are already inside</li>
+          <li><strong>Verify Explicitly:</strong> Authenticate and authorize based on all available data points</li>
+          <li><strong>Use Least Privilege Access:</strong> Limit user access with just-in-time and just-enough-access principles</li>
+          <li><strong>Assume Breach:</strong> Design systems with the assumption that attackers are already inside</li>
         </ul>
         
         <h2 id="iam-components-for-zero-trust">IAM Components for Zero Trust</h2>
@@ -1468,9 +1468,9 @@ export const BLOG_POSTS: BlogPost[] = [
         
         <h2 id="mfa-factors-explained">MFA Factors Explained</h2>
         <ul>
-          <li><b>Knowledge Factors:</b> Something you know (passwords, PINs)</li>
-          <li><b>Possession Factors:</b> Something you have (security keys, mobile devices)</li>
-          <li><b>Inherence Factors:</b> Something you are (biometrics, behavioral patterns)</li>
+          <li><strong>Knowledge Factors:</strong> Something you know (passwords, PINs)</li>
+          <li><strong>Possession Factors:</strong> Something you have (security keys, mobile devices)</li>
+          <li><strong>Inherence Factors:</strong> Something you are (biometrics, behavioral patterns)</li>
         </ul>
         
         <h2 id="choosing-the-right-mfa-methods">Choosing the Right MFA Methods</h2>
@@ -1529,10 +1529,10 @@ export const BLOG_POSTS: BlogPost[] = [
         
         <h2 id="key-compliance-frameworks">Key Compliance Frameworks</h2>
         <ul>
-          <li><b>GDPR:</b> Data protection and privacy for EU citizens</li>
-          <li><b>SOC 2:</b> Security, availability, processing integrity</li>
-          <li><b>ISO 27001:</b> Information security management</li>
-          <li><b>HIPAA:</b> Healthcare data protection</li>
+          <li><strong>GDPR:</strong> Data protection and privacy for EU citizens</li>
+          <li><strong>SOC 2:</strong> Security, availability, processing integrity</li>
+          <li><strong>ISO 27001:</strong> Information security management</li>
+          <li><strong>HIPAA:</strong> Healthcare data protection</li>
         </ul>
         
         <h2 id="cloud-specific-challenges">Cloud-Specific Challenges</h2>
@@ -1641,10 +1641,10 @@ export const BLOG_POSTS: BlogPost[] = [
         
         <h2 id="core-components-of-identity-governance">Core Components of Identity Governance</h2>
         <ul>
-          <li><b>Identity Lifecycle Management:</b> Automated provisioning and deprovisioning</li>
-          <li><b>Access Certification:</b> Regular review and validation of user access</li>
-          <li><b>Role-Based Access Control:</b> Structured permission models</li>
-          <li><b>Policy Management:</b> Centralized security policies and rules</li>
+          <li><strong>Identity Lifecycle Management:</strong> Automated provisioning and deprovisioning</li>
+          <li><strong>Access Certification:</strong> Regular review and validation of user access</li>
+          <li><strong>Role-Based Access Control:</strong> Structured permission models</li>
+          <li><strong>Policy Management:</strong> Centralized security policies and rules</li>
         </ul>
         
         <h2 id="implementing-access-certification">Implementing Access Certification</h2>
@@ -1786,7 +1786,7 @@ export const INTEGRATION_CATEGORIES = [
 ];
 
 // Privacy Policy Links
-export const PRIVACY_POLICY_LINKS: PolicyLink[] = [
+export const PRIVACY_POLICY_LINKS: LegalLink[] = [
   { id: 'introduction', name: 'Introduction' },
   { id: 'applicability', name: 'Applicability of this privacy policy' },
   { id: 'personal-information', name: 'Personal information we collect' },
@@ -1800,7 +1800,7 @@ export const PRIVACY_POLICY_LINKS: PolicyLink[] = [
 ];
 
 // Terms & Services Links
-export const TERMS_AND_SERVICES_LINKS: PolicyLink[] = [
+export const TERMS_AND_SERVICES_LINKS: LegalLink[] = [
   { id: 'changes-to-terms', name: 'Changes to the terms of use' },
   { id: 'accessing-website', name: 'Accessing the website' },
   { id: 'intellectual-property', name: 'Intellectual property rights' },
@@ -1811,7 +1811,7 @@ export const TERMS_AND_SERVICES_LINKS: PolicyLink[] = [
 ];
 
 // Cookie Policy Links
-export const COOKIE_POLICY_LINKS: PolicyLink[] = [
+export const COOKIE_POLICY_LINKS: LegalLink[] = [
   { id: 'what-are-cookies', name: 'What are cookies?' },
   { id: 'why-we-use-cookies', name: 'Why we use cookies' },
   {

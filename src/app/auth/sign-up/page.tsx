@@ -175,7 +175,7 @@ export default function SignUpPage() {
         <p className="max-w-[624px] body-text-small-regular text-center">
           By creating an account, I agree to the{' '}
           <Link
-            href="/terms-services"
+            href="/terms-conditions"
             className="text-white underline underline-offset-4"
           >
             Terms of service
