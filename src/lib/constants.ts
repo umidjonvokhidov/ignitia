@@ -1823,3 +1823,208 @@ export const COOKIE_POLICY_LINKS: PolicyLink[] = [
   { id: 'your-consent', name: 'Your consent' },
   { id: 'updates-to-policy', name: 'Updates to this policy' },
 ];
+
+// Privacy Policy Raw HTML Content
+export const PRIVACY_POLICY_RAW_HTML = `
+  <div>
+    <h1 id="introduction">Introduction</h1>
+    <p>Ignita, Inc. ('Ignita', 'we', 'us', or 'our') is committed to protecting your privacy. This Privacy Policy explains (1) what personal information we collect, (2) how we use and share your personal information, and (3) your choices concerning our privacy and information practices.</p>
+    
+    <h1 id="applicability">Applicability of this privacy policy</h1>
+    <p>Ignita provides a software platform for authentication and identity management. This Privacy Policy applies to personal information we collect via our website(s), including <a href="https://ignita.com" id="PRIVACY_POLICY_LINKS">https://ignita.com</a>, and any products or services that reference this Privacy Policy (collectively, the "Services").</p>
+    
+    <p>This Privacy Policy does not apply to personal information we process on behalf of our customers as a service provider. In those cases, our processing of personal information is governed by separate agreements with our customers. If you wish to manage your personal information that we process on behalf of a customer, please contact the Ignita customer directly.</p>
+    
+    <p>Our Services are designed for businesses, not for personal use. This Privacy Policy pertains to individuals acting as representatives of businesses.</p>
+    
+    <h1 id="personal-information">Personal information we collect</h1>
+    
+    <h2>Information you provide to us</h2>
+    <ul>
+      <li><strong>Business Contact Information.</strong> Details like name, contact details, and role(s) collected from representatives of customers, suppliers, or business partners during agreements.</li>
+      <li><strong>Feedback or correspondence.</strong> Information provided when contacting Ignita with questions, feedback, reviews, or online correspondence.</li>
+      <li><strong>Usage information.</strong> Data about how Services are used and interacted with.</li>
+      <li><strong>Marketing information.</strong> Information provided when requesting a demo, downloading a whitepaper, subscribing to a mailing list, and preferences for communications about activities, services, publications, and engagement details.</li>
+      <li><strong>Other information</strong> that may be collected, used in accordance with this policy or as disclosed at collection time.</li>
+    </ul>
+    
+    <h2>Information we obtain from third parties</h2>
+    <p>We may maintain pages on social media platforms (e.g., Facebook, Twitter, Instagram) and other third-party platforms. Your interactions with us on these platforms are subject to the platform provider's privacy policy. We may also obtain personal information from marketing partners, publicly-available sources, and data providers.</p>
+    
+    <h2>Automatic data collection</h2>
+    <p>We and our service providers may automatically log information about your device and how you interact with our Services and communications, such as:</p>
+    <ul>
+      <li><strong>Device data.</strong> Includes operating system, settings, manufacturer, model, browser type, screen resolution, RAM, disk size, CPU usage, device type (e.g., phone, tablet), IP address, unique identifiers (for advertising), language settings, mobile device carrier, radio/network information (e.g., WiFi, LTE, 4G), and general location (city, state, geographic area).</li>
+      <li><strong>Online activity data.</strong> Includes pages/screens viewed, time spent, browsing history, navigation paths, activity on pages/screens, access times, duration of access, and whether marketing emails were opened or links clicked.</li>
+      <li><strong>Email Open/Click Information.</strong> Pixels in email campaigns collect email, IP address, date/time of opening, or clicking links.</li>
+    </ul>
+    
+    <h3>We use the following tools for automatic data collection:</h3>
+    <ul>
+      <li><strong>Cookies.</strong> Text files stored on a device to identify browsers, store settings, aid navigation, remember preferences, enable functionality, understand user activity, and facilitate online advertising.</li>
+      <li><strong>Local storage technologies.</strong> Like HTML5, providing cookie-equivalent functionality to store larger data amounts on devices, outside of browsers, for specific applications.</li>
+      <li><strong>Web beacons.</strong> Also known as pixel tags or clear GIFs, used to indicate webpage/email access or content viewing/clicking.</li>
+    </ul>
+    
+    <h1 id="how-we-use">How we use your personal information</h1>
+    
+    <h2>To operate our Services</h2>
+    <ul>
+      <li>Deliver, maintain, secure, and enhance our Services.</li>
+      <li>Provide you with relevant information about our Services.</li>
+      <li>Keep you informed by sending announcements, updates, security notifications, and administrative or support messages.</li>
+      <li>Address your inquiries, respond to your feedback, and handle your requests.</li>
+    </ul>
+    
+    <h2>Marketing and Advertising</h2>
+    <p>We may send you direct marketing communications (e.g., special promotions, offers, events via email or in-app alerts). You can opt out as explained in the "Opt Out of Marketing Communications" section.</p>
+    
+    <h2>Research and Development</h2>
+    <p>We use your personal information for research and development to evaluate and enhance our Services and business. This includes creating aggregated, de-identified, or anonymized data, ensuring it cannot be linked back to individuals, and sharing it with third parties for legitimate business purposes.</p>
+    
+    <h2>Compliance and Protection</h2>
+    <ul>
+      <li>Adhere to applicable laws, lawful requests, and legal procedures, such as responding to subpoenas or government inquiries.</li>
+      <li>Safeguard the rights, privacy, safety, and property of you, us, and others, including by pursuing or defending legal claims.</li>
+      <li>Audit internal practices for compliance with legal, contractual, and safety requirements.</li>
+      <li>Enforce the terms and conditions governing our Services.</li>
+      <li>Detect, prevent, investigate, and address fraudulent, harmful, unauthorized, unethical, or illegal activities, including cyberattacks or identity theft.</li>
+    </ul>
+    
+    <h1 id="job-applicants">Job applicants</h1>
+    <p>We collect personal information (business and personal contact, professional credentials, skills, educational and work history, diversity information) from job applicants via the careers portion of our website. This information is used for recruitment, processing applications, monitoring statistics, website administration, and for legal compliance or investigations.</p>
+    
+    <h1 id="legal-bases">Legal bases for processing</h1>
+    <p>We work to protect information and ensure platform security, including independent audits. We acknowledge that no internet transmission or electronic storage method is 100% secure, meaning absolute security cannot be guaranteed. For more information about our security measures, visit: <a href="https://www.ignita.com/security" id="PRIVACY_POLICY_LINKS">https://www.ignita.com/security</a>.</p>
+    
+    <h1 id="sharing-information">How we share your personal information</h1>
+    
+    <h2>Service Providers</h2>
+    <p>We may share your personal information with third-party entities and individuals who perform services or support operations, including legal advisors, financial institutions, auditors, insurance providers, and vendors for hosting, analytics, email delivery, marketing, and database management.</p>
+    
+    <h2>Authorities and Other Parties</h2>
+    <p>We may disclose your personal information to law enforcement, government bodies, or private entities if deemed necessary to comply with legal obligations or for protection purposes.</p>
+    
+    <h2>Business Transactions</h2>
+    <p>In the event of a business transaction (merger, acquisition, reorganization, sale of assets, corporate restructuring, bankruptcy, dissolution), personal information may be sold, transferred, or shared as part of business assets, with measures taken to ensure the receiving party upholds this Privacy Policy.</p>
+    
+    <h2>Affiliates</h2>
+    <p>We may share your personal information with current and future Affiliates (entities controlling, controlled by, or under common control with Ignita), who will handle it in alignment with this policy.</p>
+    
+    <h1 id="other-sites">Other sites, mobile applications and services</h1>
+    <p>Our Services may include links to third-party websites, mobile apps, or online platforms, and these links do not imply endorsement or affiliation.</p>
+    
+    <p>Our content might appear on platforms we do not own or operate.</p>
+    
+    <p>We do not oversee or control third-party platforms and are not accountable for their practices. We recommend reviewing the privacy policies of any third-party services you interact with.</p>
+    
+    <h1 id="security-practices">Security practices</h1>
+    <p>We implement organizational, technical, and administrative safeguards to protect personal information from unauthorized access, misuse, loss, disclosure, alteration, or destruction. We reiterate that no data transmission or storage method is entirely secure, and absolute security cannot be guaranteed.</p>
+    
+    <p>If required by law to notify of a data-related incident, we may contact you via provided information (email, phone) in compliance with regulations.</p>
+    
+    <h1 id="changes-policy">Changes to this privacy policy</h1>
+    <p>We may update this policy, with significant changes notified by revising the date at the top and publishing the updated version. Other notification means (email, in-app message) may also be used.</p>
+    
+    <p>Revisions become effective upon posting or as specified, and continued use of Services signifies acceptance of the updated policy.</p>
+  </div>
+`;
+
+// Terms and Conditions Raw HTML Content
+export const TERMS_AND_CONDITIONS_RAW_HTML = `
+  <div>
+    <p>By agreeing to (or issuing a purchase order in relation to) a Services quote, order form, or other ordering document or Services-related agreement with <strong>Ignitia</strong> or one of its channel partners, or by proceeding through an online sign-up or subscription flow that references these terms (each an "Order Form"), or otherwise registering for, accessing, or using the Services, the individual or entity ("Customer") unconditionally accepts and agrees to all terms of this Agreement.</p>
+    
+    <p>By entering into this agreement on behalf of a company or other legal entity, the Customer represents having the authority to bind such entity and its affiliates to the terms, and "Customer" shall refer to such entity and its affiliates.</p>
+    
+    <h1 id="changes-to-terms">Changes to the terms of use</h1>
+    <p>The Terms of Use may be revised and updated at Ignitia's sole discretion. All changes are effective immediately upon posting, and continued use of the Website after posting revised terms signifies acceptance of those changes.</p>
+    
+    <h1 id="accessing-website">Accessing the website</h1>
+    <p>Ignitia reserves the right to terminate, alter, or amend the Website, any service, or material provided on the Website, at its sole discretion without notice. Ignitia will not be liable if any part of the Website is unavailable for any reason or period.</p>
+    
+    <h1 id="intellectual-property">Intellectual property rights</h1>
+    <p>The Website and its entire contents, features, and functionality (including information, software, text, displays, images, video, audio, design, selection, and arrangement) are owned by Ignitia, its licensors, or other providers. These are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property rights laws. All rights not specifically granted are reserved by Ignitia.</p>
+    
+    <p>Personal use of the Website is permitted, but reproduction, distribution, modification, creation of derivative works, public display, public performance, republishing, downloading, storing, or transmitting any material from the Website is prohibited, except for personal use. If social media features are provided, users may take actions enabled by those features.</p>
+    
+    <p>No right, title, or interest in the Website or its content is transferred to the user, and all rights not expressly granted are reserved by Ignitia. Any use not expressly permitted by these Terms of Use is a breach and may violate copyright, trademark, and other laws.</p>
+    
+    <h1 id="trademarks">Trademarks</h1>
+    <p>All trademarks, service marks, logos, and trade names on the Website (including "Ignitia" and the Ignitia logo) ("Marks") are the exclusive property of Ignitia or its licensors and are protected by intellectual property and trademark laws and treaties. The use, copying, reproduction, republishing, uploading, posting, transmitting, distributing, or modifying any Marks, including in advertising or publicity, without Ignitia's prior written consent is prohibited. Use of Marks on any other website is also prohibited without express written consent.</p>
+    
+    <h1 id="prohibited-use">Prohibited use</h1>
+    <p>The Website may only be used for lawful purposes and in accordance with these Terms of Use. Users agree not to use the Website for:</p>
+    <ul>
+      <li>Violating any applicable federal, state, local, or international law or regulation (including export laws).</li>
+      <li>Sending, knowingly receiving, uploading, downloading, using, or re-using any material that does not comply with these Terms of Use.</li>
+      <li>Transmitting or procuring the sending of any advertising or promotional material, including "junk mail," "chain letters," "spam," or similar solicitations.</li>
+      <li>Engaging in conduct that restricts or inhibits anyone's use or enjoyment of the Website, or which may harm Ignitia or its users, or expose them to liability.</li>
+      <li>If the user is a competitor, or for purposes of monitoring the Website's availability, performance, or functionality, or for any other benchmarking or competitive purposes.</li>
+    </ul>
+    
+    <h1 id="no-reliance">No reliance on information posted</h1>
+    <p>Information on the Website is for general purposes only, and Ignitia does not warrant its accuracy, completeness, timeliness, or usefulness. Reliance on such information is at the user's own risk, and Ignitia disclaims all liability and responsibility arising from such reliance.</p>
+    
+    <p>Ignitia may periodically update or correct information, and the Website may contain typographical errors, technical inaccuracies, or omissions. Ignitia makes no representation or warranty regarding accuracy and disclaims any obligation to update information. Ignitia reserves the right to make additions, deletions, or modifications to any information without prior notice.</p>
+    
+    <p>The Website may include third-party content and materials. All statements and opinions in such content are solely those of the provider and do not necessarily reflect Ignitia's opinion. Ignitia is not responsible or liable for the content or accuracy of any third-party materials.</p>
+    
+    <h1 id="privacy">Privacy</h1>
+    <p>Ignitia's Privacy Policy, located at <a href="https://ignitia.com/privacy" id="TERMS_AND_SERVICES_LINKS">https://ignitia.com/privacy</a>, describes the collection, use, and disclosure of personal information in connection with the Website. The Privacy Policy is expressly incorporated into these Terms of Use, and by using the Website, users agree to the collection, use, and disclosure practices outlined in the Privacy Policy.</p>
+  </div>
+`;
+
+// Cookie Policy Raw HTML Content
+export const COOKIE_POLICY_RAW_HTML = `
+  <div>
+    <p>At Ignitia, we value your privacy and are committed to being transparent about how we use cookies and similar technologies on our platform. This Cookie Policy explains what cookies are, how and why we use them, and how you can manage your preferences.</p>
+    
+    <h1 id="what-are-cookies">What are cookies?</h1>
+    <p>Cookies are small text files stored on your device (computer, smartphone, or tablet) when you visit a website. They help the website recognize your device, enhance your browsing experience, and improve functionality.</p>
+    
+    <h1 id="why-we-use-cookies">Why we use cookies</h1>
+    
+    <h2>Essential Cookies</h2>
+    <p>To enable core functionalities of our platform, such as authentication and access to secure areas.</p>
+    
+    <h2>Performance and Analytics Cookies</h2>
+    <p>To gather statistical data, such as page visits, time spent on the platform, and error tracking.</p>
+    
+    <h2>Functionality Cookies</h2>
+    <p>To remember your preferences, such as language settings or customized layouts.</p>
+    
+    <h2>Targeting and Advertising Cookies</h2>
+    <p>To deliver relevant content and advertisements based on your interests and usage patterns.</p>
+    
+    <h1 id="website-data-collection">Website data collection preferences</h1>
+    
+    <h2>Essential</h2>
+    <p>To understand user behaviour in order to provide you with a more relevant browsing experience or personalise the content on our site. For example, we collect information about which pages you visit to help us present more relevant information.</p>
+    
+    <h2>Marketing and Analytics</h2>
+    <p>To understand user behaviour in order to provide you with a more relevant browsing experience or personalise the content on our site. For example, we collect information about which pages you visit to help us present more relevant information.</p>
+    
+    <h2>Advertising</h2>
+    <p>To personalize and measure the effectiveness of advertising on our site and other websites. For example, we may serve you a personalized ad based on the pages you visit on our site.</p>
+    
+    <h1 id="third-party-cookies">Third-party cookies</h1>
+    <p>We may also use third-party cookies provided by trusted partners to enhance the functionality and analytics of the platform. These third parties may include analytics providers like Google Analytics or advertising networks.</p>
+    
+    <h1 id="how-to-manage">How to manage cookies</h1>
+    <p>You may use the Website only for lawful purposes and in accordance with these Terms of Use. You agree not to use the Website:</p>
+    <ul>
+      <li>In any way that violates any applicable federal, state, local or international law or regulation (including, without limitation, any laws regarding the export of data or software to and from the US or other countries).</li>
+      <li>To send, knowingly receive, upload, download, use or re-use any material which does not comply with these Terms of Use.</li>
+      <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail", "chain letter" or "spam" or any other similar solicitation.</li>
+      <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Website, or which, as determined by us, may harm Ignitia or users of the Website or expose them to liability.</li>
+      <li>If you are a competitor, or for purposes of monitoring the Website's availability, performance or functionality, or for any other benchmarking or competitive purposes.</li>
+    </ul>
+    
+    <h1 id="your-consent">Your consent</h1>
+    <p>By continuing to use the Ignitia platform, you consent to our use of cookies in accordance with this Cookie Policy.</p>
+    
+    <h1 id="updates-to-policy">Updates to this policy</h1>
+    <p>We may update this Cookie Policy from time to time to reflect changes in technology, laws, or our business operations. Any updates will be posted on this page, and significant changes will be communicated to you directly.</p>
+  </div>
+`;

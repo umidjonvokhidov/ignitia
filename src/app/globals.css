@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -343,7 +344,7 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-[#0B0C0C] text-white;
     font-family: var(--font-inter);
@@ -536,5 +537,3 @@
   flex: 0 0 100%;
   min-width: 0;
 }
-
-
