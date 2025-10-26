@@ -1096,16 +1096,6 @@ export const PRICING_PLAN_FEATURES: PricingPlanFeatures = {
   ],
 };
 
-// Helper function to generate URL-friendly IDs from titles
-const generateId = (title: string): string => {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .trim();
-};
-
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'caching-keys-iam-security',

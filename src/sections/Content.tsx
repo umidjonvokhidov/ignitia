@@ -5,7 +5,7 @@ export default function Content({
   tableOfContents,
 }: {
   rawHTML: string;
-  tableOfContents: any;
+  tableOfContents: LegalLink[];
 }) {
   return (
     <section className="flex items-start relative scroll-smooth">

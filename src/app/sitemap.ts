@@ -1,9 +1,10 @@
-import { MetadataRoute } from 'next';
-import { env } from '@/lib/env';
+import { MetadataRoute } from 'next'
+import { env } from '@/lib/env'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = env.baseUrl;
-
+  const baseUrl = env.baseUrl
+  
+  // Static routes
   const staticRoutes = [
     {
       url: baseUrl,
@@ -59,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily' as const,
       priority: 0.5,
     },
+    // Legal pages
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
@@ -77,7 +79,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
-  ];
+  ]
 
-  return staticRoutes;
+  // Note: Auth pages are intentionally excluded from sitemap
+  // as they should not be indexed by search engines
+
+  return staticRoutes
 }

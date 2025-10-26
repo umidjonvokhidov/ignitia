@@ -16,9 +16,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import HamburgerMenu from '@/public/lotties/HamburgerMenu.json';
-import Lottie from 'lottie-react';
+import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 
 import {
   Accordion,
@@ -29,12 +29,12 @@ import {
 import CustomButton from './CustomButton';
 
 export default function Navigation() {
-  const lottieRef = useRef<any>(null);
+  const lottieRef = useRef<LottieRefCurrentProps | null>(null);
   const [open, setOpen] = useState(false);
 
   const FPS = 60;
-  const OPEN_SEGMENT: [number, number] = [1, 57];
-  const CLOSE_SEGMENT: [number, number] = [57, 1];
+  const OPEN_SEGMENT = useMemo<[number, number]>(() => [1, 57], []);
+  const CLOSE_SEGMENT = useMemo<[number, number]>(() => [57, 1], []);
   const OPEN_DURATION_SEC = 0.3;
   const CLOSE_DURATION_SEC = 0.3;
 
@@ -60,7 +60,7 @@ export default function Navigation() {
       setSpeedForDuration(CLOSE_SEGMENT, CLOSE_DURATION_SEC);
       lottieRef.current.playSegments?.(CLOSE_SEGMENT, true);
     }
-  }, [open]);
+  }, [open, OPEN_SEGMENT, CLOSE_SEGMENT]);
 
   return (
     <nav className="flex items-center justify-between z-10 bg-[#0B0C0C] h-[92px] sticky top-0 p-6 border-y border-white/[0.08]">

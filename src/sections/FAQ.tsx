@@ -10,7 +10,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/FAQSectionAccordion';
-import { number } from 'zod';
 
 export default function FAQ() {
   const [filter, setFilter] = useState<string>('General');
@@ -27,7 +26,7 @@ export default function FAQ() {
         <div className="flex flex-col">
           <ScrollArea>
             <div className="w-full flex items-center gap-x-2 pb-2">
-              {FAQ_DATA.map(({ category, items }: FAQCategory) => (
+              {FAQ_DATA.map(({ category }: FAQCategory) => (
                 <div
                   key={category}
                   className={twMerge(

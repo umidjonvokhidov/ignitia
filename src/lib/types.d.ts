@@ -6,7 +6,7 @@ declare module '*.svg' {
 }
 
 declare module '*.svg?url' {
-  const content: any;
+  const content: string;
   export default content;
 }
 
@@ -87,7 +87,7 @@ declare interface FAQCategory {
 declare interface PricingPlan {
   name: string;
   description: string;
-  price: Number;
+  price: number;
   features: string[];
   isPopular?: boolean;
   href: string;

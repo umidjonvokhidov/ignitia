@@ -1,7 +1,6 @@
 import CustomButton from '@/components/CustomButton';
 import { COMPANY_LIST } from '@/lib/constants';
 import Image from 'next/image';
-import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
 
 export default function NotFound() {

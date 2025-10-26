@@ -50,7 +50,7 @@ export default function LoginPage() {
           Welcome <span className="handwrite">back.</span>
         </h1>
         <div className="flex items-center justify-center flex-wrap">
-          <p className="text-white">You're new here?</p>
+          <p className="text-white">You&apos;re new here?</p>
           <Link href="/auth/sign-up" className="flex items-center gap-x-1">
             <ChevronUp className="-rotate-90 text-primary-500" />
             <span className="text-primary-500 body-text-small-medium">

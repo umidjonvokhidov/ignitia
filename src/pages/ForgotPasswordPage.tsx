@@ -46,7 +46,7 @@ export default function ForgotPasswordPage() {
           Forgot your <span className="handwrite">password?</span>
         </h1>
         <p className="max-w-[448px] text-center">
-          Enter your email address you've registered with so we can send you
+          Enter your email address you&apos;ve registered with so we can send you
           password reset link.
         </p>
       </div>
