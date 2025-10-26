@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Content from '@/sections/Content';
 import PatternDivider from '@/components/PatternDivider';
 import LegalHero from '@/components/LegalHero';
@@ -5,6 +6,10 @@ import {
   TERMS_AND_CONDITIONS_RAW_HTML,
   TERMS_AND_SERVICES_LINKS,
 } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions',
+};
 
 export default function TermsServicesPage() {
   return (

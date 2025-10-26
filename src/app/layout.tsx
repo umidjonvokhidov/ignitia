@@ -15,9 +15,15 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: 'Ignitia - Modern User Management & SaaS Platform',
+  title: {
+    default: 'Ignitia - Modern User Management & SaaS Platform',
+    template: 'Ignitia - %s',
+  },
   description:
     'Ignitia is a comprehensive user management and SaaS platform designed to streamline your business operations. Manage users, track analytics, and scale your business with our modern, intuitive interface.',
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({

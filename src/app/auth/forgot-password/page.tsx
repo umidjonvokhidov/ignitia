@@ -1,7 +1,12 @@
 'use client';
 
+import type { Metadata } from 'next';
 import Logo from '@/public/icons/Logo.svg';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Forgot Password',
+};
 import ChevronUp from '@/public/icons/chevron-up.svg';
 import {
   Form,
@@ -42,7 +47,7 @@ export default function ForgotPasswordPage() {
       </Link>
       <div className="flex flex-col items-center gap-y-2">
         <h1 className="text-h5">
-        Forgot your <span className="handwrite">password?</span>
+          Forgot your <span className="handwrite">password?</span>
         </h1>
         <p className="max-w-[448px] text-center">
           Enter your email address you've registered with so we can send you

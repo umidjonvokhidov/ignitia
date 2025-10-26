@@ -57,10 +57,10 @@ export default function Features() {
         <Accordion type="multiple">
           {FEATURES_ACCORDION.map(({ description, title }: FeatureItem) => (
             <AccordionItem value={title} key={title} className="border-white/8">
-              <AccordionTrigger className="h-20 md:h-24 !body-text-large-semi-bold flex items-center py-4 px-3 md:px-10 md:py-8">
+              <AccordionTrigger className="h-20 cursor-pointer md:h-24 !body-text-large-semi-bold flex items-center py-4 px-3 md:px-10 md:py-8">
                 {title}
               </AccordionTrigger>
-              <AccordionContent className="body-text-small-regular text-neutral-600 pb-4 px-3 md:px-10 md:pb-8">
+              <AccordionContent className="body-text-small-regular md:body-text-medium-regular text-neutral-600 pb-4 px-3 md:px-10 md:pb-8">
                 {description}
               </AccordionContent>
             </AccordionItem>
@@ -123,7 +123,7 @@ export default function Features() {
                 render={({ field }) => (
                   <FormItem>
                     <div className="flex items-center gap-x-3 justify-center md:justify-start">
-                      <FormControl>
+                      <FormControl className="cursor-pointer">
                         <Checkbox
                           checked={field.value}
                           onCheckedChange={field.onChange}
@@ -132,7 +132,9 @@ export default function Features() {
                           ref={field.ref}
                         />
                       </FormControl>
-                      <FormLabel>Remember me</FormLabel>
+                      <FormLabel className="cursor-pointer">
+                        Remember me
+                      </FormLabel>
                     </div>
                     <FormMessage />
                   </FormItem>

@@ -1,7 +1,12 @@
 'use client';
 
+import type { Metadata } from 'next';
 import Logo from '@/public/icons/Logo.svg';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Sign Up',
+};
 import ChevronUp from '@/public/icons/chevron-up.svg';
 import {
   Form,
