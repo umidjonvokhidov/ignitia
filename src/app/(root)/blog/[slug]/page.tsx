@@ -7,6 +7,39 @@ import LinkIcon from '@/public/icons/Link.svg';
 import LinkedInIcon from '@/public/icons/linkedin.svg';
 import InstagramIcon from '@/public/icons/instagram.svg';
 import Image from 'next/image';
+import { cache } from 'react';
+import { Metadata } from 'next';
+
+export async function generateStaticParams() {
+  return BLOG_POSTS.map(({ id }: BlogPost) => ({
+    id,
+  }));
+}
+
+const getBlogPost = cache(async (slug: string) => {
+  return BLOG_POSTS.find((post) => post.id === slug);
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlogPost(slug);
+  return {
+    metadataBase: new URL(process.env.BASE_URL as string),
+    title: blog ? blog.title : 'Blog Post',
+    description: blog ? blog.content : 'Read our latest blog post',
+    openGraph: {
+      images: [
+        {
+          url: blog?.image || '',
+        },
+      ],
+    },
+  };
+}
 
 export default async function BlogDetailPage({
   params,
@@ -14,7 +47,7 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const blog = BLOG_POSTS.find((e) => e.id === slug);
+  const blog = await getBlogPost(slug);
   const initials = blog?.author.name
     .split(' ')
     .map((word) => word[0])
