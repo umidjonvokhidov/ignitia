@@ -9,6 +9,7 @@ import InstagramIcon from '@/public/icons/instagram.svg';
 import Image from 'next/image';
 import { cache } from 'react';
 import { Metadata } from 'next';
+import env from '@/lib/env';
 
 export async function generateStaticParams() {
   return BLOG_POSTS.map(({ id }: BlogPost) => ({
@@ -28,7 +29,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const blog = await getBlogPost(slug);
   return {
-    metadataBase: new URL(process.env.BASE_URL as string),
+    metadataBase: new URL(env.baseUrl as string),
     title: blog ? blog.title : 'Blog Post',
     description: blog ? blog.content : 'Read our latest blog post',
     openGraph: {
