@@ -5,8 +5,8 @@
 
 export const env = {
   // Base URL configuration
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://ignitia.com',
-  siteName: process.env.NEXT_PUBLIC_SITE_NAME || 'Ignitia',
+  baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  siteName: process.env.SITE_NAME || 'Ignitia',
   
   // Environment
   nodeEnv: process.env.NODE_ENV || 'development',
