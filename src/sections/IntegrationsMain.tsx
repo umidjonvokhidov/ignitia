@@ -31,11 +31,11 @@ const IntegrationsMain = () => {
           </div>
           <div className="py-4 px-6 lg:p-10 flex flex-col gap-y-10 border-y border-white/8">
             <CustomButton
-              className="flex items-center gap-x-1 h-10"
+              className="flex items-center gap-x-1 min-h-10"
               type="secondary"
               href="#"
             >
-              <span>Request an Integrations</span>
+              <span className='body-text-small-semi-bold'>Request an Integrations</span>
               <ExternalLinkIcon className="size-5" />
             </CustomButton>
           </div>

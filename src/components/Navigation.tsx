@@ -65,7 +65,7 @@ export default function Navigation() {
   return (
     <nav className="flex items-center justify-between z-10 bg-[#0B0C0C] h-[92px] sticky top-0 p-6 border-y border-white/[0.08]">
       <div className="flex items-center gap-x-4">
-        <Link href="/">
+        <Link href="/" onClick={() => setOpen(false)}>
           <Image
             src="/icons/Logo-full.svg"
             alt="Logo"
@@ -164,6 +164,7 @@ export default function Navigation() {
                             <Link
                               key={title}
                               href={href}
+                              onClick={() => setOpen(false)}
                               className="h-12 cursor-pointer flex items-center justify-center text-sm font-medium hover:bg-gray-900 transition-colors"
                             >
                               {title}
@@ -176,6 +177,7 @@ export default function Navigation() {
                             <Link
                               key={title}
                               href={href}
+                              onClick={() => setOpen(false)}
                               className="h-12 cursor-pointer flex items-center justify-center text-sm font-medium hover:bg-gray-900 transition-colors"
                             >
                               {title}
@@ -188,6 +190,7 @@ export default function Navigation() {
                   <Link
                     key={label}
                     href={href}
+                    onClick={() => setOpen(false)}
                     className="h-12 cursor-pointer flex items-center justify-center text-sm font-medium hover:bg-gray-900 transition-colors"
                   >
                     {label}

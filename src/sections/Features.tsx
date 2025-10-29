@@ -53,33 +53,34 @@ export default function Features() {
           Provides all the tools you need to protect your users and data.
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
         <Accordion type="multiple">
           {FEATURES_ACCORDION.map(({ description, title }: FeatureItem) => (
             <AccordionItem value={title} key={title} className="border-white/8">
-              <AccordionTrigger className="h-20 cursor-pointer md:h-24 !body-text-large-semi-bold flex items-center py-4 px-3 md:px-10 md:py-8">
+              <AccordionTrigger className="cursor-pointer !body-text-large-semi-bold flex items-center py-4 px-3 md:px-10 md:py-8">
                 {title}
               </AccordionTrigger>
-              <AccordionContent className="body-text-small-regular md:body-text-medium-regular text-neutral-600 pb-4 px-3 md:px-10 md:pb-8">
+              <AccordionContent className="body-text-small-regular  md:body-text-medium-regular text-neutral-600 pb-4 px-3 md:px-10 md:pb-8">
                 {description}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        <div className="p-4 md:p-10 w-full flex flex-col justify-center bg-white/4 relative group">
-          <Image
-            src="/images/SocialsBg.svg"
-            width={0}
-            height={0}
-            className="w-auto h-auto absolute z-3 opacity-50 left-1/2 -translate-x-1/2"
-            alt="bg"
-          />
-          <div className="bg-[radial-gradient(68.33%_68.33%_at_50%_53.12%,_#00000038_50%,_#151616_100%)] w-full h-full absolute top-0 left-0 z-2" />
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8 flex flex-col justify-center h-[360px] z-5 md:z-0 group-hover:z-5 transition-all duration-500"
-            >
+
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="p-10 w-full bg-white/4 relative h-full group overflow-hidden"
+          >
+            <div className="bg-[radial-gradient(68.33%_68.33%_at_50%_53.12%,_#00000038_50%,_#151616_100%)] hidden lg:block group-hover:hidden w-full h-full absolute top-0 left-0 z-1" />
+            <Image
+              src="/images/SocialsBg.svg"
+              width={448}
+              height={400}
+              className="w-[300px] h-auto top-0 object-contain absolute -z-1 opacity-50 left-1/2 -translate-x-1/2"
+              alt="bg"
+            />
+            <div className="space-y-8 flex flex-col justify-center transition-all duration-500">
               <FormField
                 control={form.control}
                 name="email"
@@ -143,9 +144,9 @@ export default function Features() {
               <CustomButton type="submit" className="w-full max-h-12">
                 Submit
               </CustomButton>
-            </form>
-          </Form>
-        </div>
+            </div>
+          </form>
+        </Form>
       </div>
     </section>
   );

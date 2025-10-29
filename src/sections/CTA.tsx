@@ -27,7 +27,7 @@ export default function CTA() {
           you need.
         </p>
       </div>
-      <CustomButton className="h-8 md:h-12 w-auto">Contact Us</CustomButton>
+      <CustomButton className="h-8 md:h-12 w-auto" href='/contact-us'>Contact Us</CustomButton>
     </section>
   );
 }

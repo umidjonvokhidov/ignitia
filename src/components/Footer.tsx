@@ -20,9 +20,9 @@ const Footer = () => {
             productivity.
           </p>
         </div>
-        <div className="flex items-center gap-3 w-full md:w-auto flex-wrap">
-          <CustomButton type="secondary">Learn More</CustomButton>
-          <CustomButton>Get Started</CustomButton>
+        <div className="flex items-center gap-3 w-full flex-wrap justify-start lg:justify-end">
+          <CustomButton type="secondary" href='/about-us' className='flex-none sm:w-auto'>Learn More</CustomButton>
+          <CustomButton href='/auth/sign-up' className='flex-none sm:w-auto'>Get Started</CustomButton>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-8 md:p-8 lg:gap-10 lg:p-10">

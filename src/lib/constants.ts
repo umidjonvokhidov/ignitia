@@ -709,7 +709,7 @@ export const FOOTER_SECTIONS: FooterSection[] = [
     links: [
       { name: 'Blog', href: '/blog' },
       { name: 'Pricing', href: '/pricing' },
-      { name: 'Contact Us', href: '/contact' },
+      { name: 'Contact Us', href: '/contact-us' },
       { name: 'Customer Stories', href: '/customer-stories' },
     ],
   },

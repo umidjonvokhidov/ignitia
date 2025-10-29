@@ -15,14 +15,17 @@ export default function FAQ() {
   const [filter, setFilter] = useState<string>('General');
 
   return (
-    <section className='overflow-hidden'>
+    <section className="overflow-hidden">
       <div className="flex flex-col items-start px-4 md:px-[90px] lg:px-[180px] py-6 md:py-8 lg:py-10 border-b border-white/8">
         <h3 className="text-h5 md:text-h4 lg:text-h3 inline-block w-full max-w-[300px] md:max-w-[350px] lg:max-w-[400px]">
           Questions, meet <span className="handwrite">answers.</span>
         </h3>
       </div>
       <div className="py-6 px-4 md:py-8 lg:py-10 md:gap-y-6 lg:gap-y-8 flex flex-col gap-y-4 md:px-[90px] lg:px-[180px] relative">
-        <div className="w-full h-[563px] -right-3/5 top-1/2 -translate-y-1/2 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px] -z-5" />
+        <div
+          className="absolute w-full h-[563px] hidden md:block -right-3/5 top-1/2 -translate-y-1/2 opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]  pointer-events-none transition-all"
+          style={{ transform: 'translateZ(0)' }}
+        />
         <div className="flex flex-col">
           <ScrollArea>
             <div className="w-full flex items-center gap-x-2 pb-2">
@@ -44,18 +47,14 @@ export default function FAQ() {
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </div>
-        <Accordion type="multiple" className="flex flex-col gap-y-4">
+        <Accordion type="multiple" className="flex flex-col gap-y-4 h-full">
           {FAQ_DATA.filter((item) => item.category === filter)[0].items.map(
             ({ description, title }: FAQItem, index: number) => (
-              <AccordionItem
-                value={title}
-                key={index}
-                className="!p-0"
-              >
+              <AccordionItem value={title} key={index} className="!p-0">
                 <AccordionTrigger className="!body-text-large-semi-bold cursor-pointer p-4 md:px-10 md:py-6">
                   {title}
                 </AccordionTrigger>
-                <AccordionContent className="!body-text-medium-regular text-neutral-500 p-4 md:px-10 md:py-6 !pt-0">
+                <AccordionContent className="!body-text-medium-regular  text-neutral-500 p-4 md:px-10 md:py-6 !pt-0">
                   {description}
                 </AccordionContent>
               </AccordionItem>

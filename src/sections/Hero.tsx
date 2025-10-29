@@ -17,7 +17,7 @@ export default function Hero() {
           </div>
           <h1 className='text-h5 md:text-h3 lg:text-h2 max-w-[596px] wrap-break-word inline-block text-center justify-center'>Simplify and optimize your <span className='handwrite'>user experience.</span></h1>
         </div>
-        <div className='flex flex-col items-center gap-y-4 md:gap-y-6'>
+        <div className='flex flex-col items-center gap-y-4 md:gap-y-6 w-full'>
           <div className='flex items-center justify-center gap-1 md:gap-2 flex-wrap'>
             {FRAMEWORKS.map(({icon: Icon,name}: Framework) => (
               <div className='bg-white/4 border border-white/8 rounded-md p-0.5' key={name}>
@@ -25,9 +25,9 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-3 w-full md:w-auto flex-wrap">
-            <CustomButton className='h-8 md:h-11 lg:h-12'>Try for Free</CustomButton>
-            <CustomButton className='h-8 md:h-11 lg:h-12' type="secondary">Learn More</CustomButton>
+          <div className="flex items-center gap-3 w-full justify-center flex-wrap">
+            <CustomButton className='h-8 md:h-11 lg:h-12 w-auto' href='/auth/sign-up'>Try for Free</CustomButton>
+            <CustomButton className='h-8 md:h-11 lg:h-12 w-auto' type="secondary" href='/about-us'>Learn More</CustomButton>
           </div>
         </div>
       </div>

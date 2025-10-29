@@ -20,7 +20,7 @@ export default function About() {
         <div className="rounded-[1018px] w-full h-full opacity-70 bg-[linear-gradient(180deg,rgba(55,122,251,0.15)_25%,rgba(255,255,255,0.04)_100%)] blur-[150px] absolute top-0 -z-5" />
         <div className="invisible w-full h-full bg-white/1 backdrop-blur-md absolute z-7 group-hover:opacity-100 opacity-0 md:group-hover:visible transition-all duration-500 md:flex justify-center items-center">
           <div>
-            <CustomButton type="secondary" className="w-auto flex-auto">
+            <CustomButton type="secondary" className="w-auto flex-auto" href='/integrations'>
               Meet Our Customers
             </CustomButton>
           </div>

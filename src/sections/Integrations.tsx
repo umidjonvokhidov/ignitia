@@ -14,7 +14,7 @@ export default function Integrations() {
   const count = !mounted ? 13 : lgScreen ? 13 : mdScreen ? 11 : 11;
 
   return (
-    <section>
+    <section className='overflow-hidden'>
       <div className="flex flex-col items-center px-4 py-6 gap-y-4 md:py-8 lg:py-10 max-w-[700px] mx-auto">
         <h3 className="text-h6 md:text-h4 lg:text-h3 inline-block w-full text-center">
           Boost efficiency with powerful{' '}
@@ -27,10 +27,10 @@ export default function Integrations() {
         </p>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-[1px] p-[1px] bg-white/4 relative ">
-        <div className="w-full h-full left-1/2 -translate-x-1/2 -bottom-3/4 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]" />
-        <div className="w-full h-full left-1/2 -translate-x-1/2 -top-3/4 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]" />
+        <div className="w-[1018px] h-[563px] md:h-full left-1/2 -translate-x-1/2 -bottom-1/2 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]" />
+        <div className="w-[1018px] h-[563px] md:h-full left-1/2 -translate-x-1/2 -top-1/2 absolute opacity-70 bg-gradient-to-b from-blue-500/20 to-white/5 rounded-full blur-[150px]" />
         <div className="col-start-1 row-start-5 col-span-3 row-span-1 md:col-start-2 md:col-span-3 md:row-start-3 md:row-span-2 lg:col-start-4 lg:col-span-4 lg:row-start-2 lg:row-span-1 w-full flex items-center justify-center bg-[#0B0C0C] h-[150px] md:h-full">
-          <CustomButton className="w-auto flex-none">
+          <CustomButton className="w-auto flex-none z-2" href='/integrations'>
             View All Integrations
           </CustomButton>
         </div>
@@ -46,7 +46,7 @@ export default function Integrations() {
             mdrow,
           }: IntegrationItem) => (
             <div
-              key={name}
+              key={name}   
               className="aspect-square flex justify-center items-center transition-all bg-[#0B0C0C] duration-500 overflow-hidden grid-item"
               style={
                 {
