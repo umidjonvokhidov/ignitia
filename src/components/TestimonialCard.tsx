@@ -33,7 +33,7 @@ const TestimonialCard = ({
           </p>
         </div>
       </div>
-      <blockquote className="body-text-large-medium">
+      <blockquote className="body-text-small-medium md:body-text-large-medium">
         &quot;{quote}&quot;
       </blockquote>
     </div>
