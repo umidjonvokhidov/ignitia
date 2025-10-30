@@ -25,9 +25,9 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-3 w-full justify-center flex-wrap">
-            <CustomButton className='h-8 md:h-11 lg:h-12 w-auto' href='/auth/sign-up'>Try for Free</CustomButton>
-            <CustomButton className='h-8 md:h-11 lg:h-12 w-auto' type="secondary" href='/about-us'>Learn More</CustomButton>
+          <div className="flex items-center gap-3 justify-center flex-wrap">
+            <CustomButton className='min-h-8 md:min-h-11 lg:min-h-12 sm:w-auto flex-none' href='/auth/sign-up'>Try for Free</CustomButton>
+            <CustomButton className='min-h-8 md:min-h-11 lg:min-h-12 sm:w-auto flex-none' type="secondary" href='/about-us'>Learn More</CustomButton>
           </div>
         </div>
       </div>
