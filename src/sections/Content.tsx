@@ -17,7 +17,7 @@ export default function Content({
           />
         )}
       </main>
-      <aside className="hidden md:flex flex-col sticky top-[92px] min-w-[300px] lg:min-w-[360px]">
+      <aside className="hidden md:flex flex-col sticky top-[92px] min-w-[300px] h-auto lg:min-w-[360px]">
         <div className="p-10 flex flex-col gap-y-4">
           <h4 className="text-xs text-neutral-500 leading-4">
             TABLE OF CONTENT
