@@ -70,17 +70,17 @@ export default function Features() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="p-10 w-full bg-white/4 relative h-full group overflow-hidden"
+            className="p-10 w-full bg-white/4 relative group overflow-hidden h-full flex justify-center items-center"
           >
-            <div className="bg-[radial-gradient(68.33%_68.33%_at_50%_53.12%,_#00000038_50%,_#151616_100%)] hidden lg:block group-hover:hidden w-full h-full absolute top-0 left-0 z-1" />
+            <div className="bg-[radial-gradient(68.33%_68.33%_at_50%_53.12%,_#00000038_50%,_#151616_100%)] hidden lg:block group-hover:hidden w-full h-full absolute top-1/2 -translate-y-1/2 left-0 z-1" />
             <Image
               src="/images/SocialsBg.svg"
               width={448}
               height={400}
-              className="w-[300px] h-auto top-0 object-contain absolute -z-1 opacity-50 left-1/2 -translate-x-1/2"
+              className="w-[300px] h-auto top-1/2 -translate-y-1/2 object-contain absolute -z-1 opacity-50 left-1/2 -translate-x-1/2"
               alt="bg"
             />
-            <div className="space-y-8 flex flex-col justify-center transition-all duration-500">
+            <div className="space-y-8 flex flex-col justify-center transition-all duration-500 w-full">
               <FormField
                 control={form.control}
                 name="email"
